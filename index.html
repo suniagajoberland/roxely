@@ -45,6 +45,10 @@
           var(--color-rosa) 100%
         );
         --brand-whatsapp: #25d366;
+        --brand-instagram: #e4405f;
+        --brand-facebook: #1877f2;
+        --brand-youtube: #ff0000;
+        --brand-tiktok: #000000;
       }
 
       * {
@@ -110,7 +114,6 @@
         height: 100vh;
         width: 100%;
         overflow: hidden;
-        clip-path: inset(0 0 0 0);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -177,7 +180,7 @@
         margin-bottom: 0.5rem;
       }
 
-      /* MARQUESINA GALERÍA */
+      /* MARQUESINA GALERÍA (solo para galería) */
       .contenedor-marquesina {
         display: flex;
         flex-direction: column;
@@ -195,17 +198,28 @@
           black 85%,
           transparent
         );
+        cursor: grab;
+        border-radius: 20px;
+        background: rgba(30, 41, 59, 0.3);
+      }
+      .marquesina-wrapper:active {
+        cursor: grabbing;
       }
       .marquesina-track {
         display: flex;
         gap: 20px;
         flex-shrink: 0;
         animation: scroll-izq 40s linear infinite;
+        transition: transform 0.3s ease;
+        padding: 10px 0;
       }
       .marquesina-wrapper.reverse .marquesina-track {
         animation: scroll-der 40s linear infinite;
       }
       .marquesina-wrapper:hover .marquesina-track {
+        animation-play-state: paused;
+      }
+      .marquesina-wrapper.dragging .marquesina-track {
         animation-play-state: paused;
       }
       .marquesina-item {
@@ -215,6 +229,11 @@
         border-radius: 20px;
         overflow: hidden;
         border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      .marquesina-item:hover {
+        transform: scale(1.05);
+        border-color: var(--color-cian);
       }
       .marquesina-item img {
         width: 100%;
@@ -224,6 +243,85 @@
       }
       .marquesina-item:hover img {
         transform: scale(1.1);
+      }
+
+      /* GRID MARCAS NUEVO */
+      .contenedor-grid-marcas {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 24px;
+        padding: 40px 20px;
+      }
+      .marca-boton {
+        position: relative;
+        height: 200px;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 2px solid rgba(255, 255, 255, 0.1);
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(15, 23, 42, 0.9)
+        );
+        backdrop-filter: blur(10px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--texto-principal);
+        font-weight: 600;
+        text-align: center;
+        padding: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+      .marca-boton::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--degradado-marca);
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        z-index: 0;
+      }
+      .marca-boton img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.6s ease;
+        z-index: 1;
+      }
+      .marca-boton .contenido-marca {
+        position: relative;
+        z-index: 2;
+        transform: translateY(20px);
+        opacity: 0;
+        transition: all 0.4s ease;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+      }
+      .marca-boton:hover {
+        transform: translateY(-15px) scale(1.05);
+        border-color: var(--color-cian);
+        box-shadow: 0 25px 50px rgba(34, 211, 238, 0.3);
+      }
+      .marca-boton:hover::before {
+        opacity: 0.15;
+      }
+      .marca-boton:hover img {
+        transform: scale(1.1);
+      }
+      .marca-boton:hover .contenido-marca {
+        transform: translateY(0);
+        opacity: 1;
       }
 
       @keyframes scroll-izq {
@@ -246,7 +344,7 @@
       /* PROMOCIONES */
       .seccion-promociones {
         background: #0f172a;
-        padding: 80px 0 140px 0;
+        padding: 80px 0;
         border-top: 1px solid rgba(255, 255, 255, 0.05);
       }
       .contenedor-slider {
@@ -269,7 +367,7 @@
         object-fit: cover;
       }
       .seccion-promociones .swiper-pagination {
-        bottom: 3px !important;
+        bottom: 2px !important;
       }
       .seccion-promociones .swiper-pagination-bullet {
         background: rgba(255, 255, 255, 0.2);
@@ -310,7 +408,6 @@
       .icono-red {
         width: 50px;
         height: 50px;
-        background: var(--color-fondo-tarjeta);
         border-radius: 12px;
         display: flex;
         align-items: center;
@@ -318,10 +415,23 @@
         color: white;
         text-decoration: none;
         transition: 0.3s;
+        font-size: 1.2rem;
+      }
+      .icono-red.instagram {
+        background-color: var(--brand-instagram);
+      }
+      .icono-red.whatsapp {
+        background-color: var(--brand-whatsapp);
+      }
+      .icono-red.facebook {
+        background-color: var(--brand-facebook);
+      }
+      .icono-red.youtube {
+        background-color: var(--brand-youtube);
       }
       .icono-red:hover {
-        background: var(--color-cian);
-        transform: translateY(-5px);
+        transform: translateY(-5px) scale(1.1);
+        filter: brightness(1.2);
       }
 
       @media (max-width: 768px) {
@@ -332,6 +442,13 @@
           width: 220px;
           height: 150px;
         }
+        .contenedor-grid-marcas {
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+        .marca-boton {
+          height: 160px;
+        }
       }
     </style>
   </head>
@@ -341,8 +458,9 @@
       href="https://wa.me/584143693311"
       class="whatsapp-flotante"
       target="_blank"
-      ><i class="fab fa-whatsapp"></i
-    ></a>
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header class="menu-principal">
       <nav class="contenedor-navegacion">
@@ -351,11 +469,13 @@
           <li><a href="#inicio">Inicio</a></li>
           <li><a href="#galeria">Galería</a></li>
           <li><a href="#promociones">Promociones</a></li>
+          <li><a href="#marcas">Marcas</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
+      <!-- 1️⃣ INICIO (Hero) -->
       <section class="hero-bienvenida" id="inicio">
         <div class="contenedor-video-fixed">
           <video class="video-fondo" autoplay muted loop playsinline>
@@ -372,111 +492,149 @@
         </div>
       </section>
 
+      <!-- 2️⃣ GALERÍA (Marquee) -->
       <section class="seccion-estandar" id="galeria">
         <span class="etiqueta-pequena">Portafolio Dinámico</span>
         <h2 class="titulo-seccion">Proyectos Recientes</h2>
         <div class="contenedor-marquesina">
-          <div class="marquesina-wrapper">
+          <div class="marquesina-wrapper" data-marquee="galeria-izq">
             <div class="marquesina-track">
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=1" />
+                <img
+                  src="https://picsum.photos/600/400?random=1"
+                  alt="Proyecto 1"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=2" />
+                <img
+                  src="https://picsum.photos/600/400?random=2"
+                  alt="Proyecto 2"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=3" />
+                <img
+                  src="https://picsum.photos/600/400?random=3"
+                  alt="Proyecto 3"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=4" />
+                <img
+                  src="https://picsum.photos/600/400?random=4"
+                  alt="Proyecto 4"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=5" />
+                <img
+                  src="https://picsum.photos/600/400?random=5"
+                  alt="Proyecto 5"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=6" />
+                <img
+                  src="https://picsum.photos/600/400?random=6"
+                  alt="Proyecto 6"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=7" />
+                <img
+                  src="https://picsum.photos/600/400?random=7"
+                  alt="Proyecto 7"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=8" />
+                <img
+                  src="https://picsum.photos/600/400?random=8"
+                  alt="Proyecto 8"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=9" />
+                <img
+                  src="https://picsum.photos/600/400?random=9"
+                  alt="Proyecto 9"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=10" />
+                <img
+                  src="https://picsum.photos/600/400?random=10"
+                  alt="Proyecto 10"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=1" />
+                <img
+                  src="https://picsum.photos/600/400?random=1"
+                  alt="Proyecto 1"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=2" />
+                <img
+                  src="https://picsum.photos/600/400?random=2"
+                  alt="Proyecto 2"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=3" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=4" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=5" />
+                <img
+                  src="https://picsum.photos/600/400?random=3"
+                  alt="Proyecto 3"
+                />
               </div>
             </div>
           </div>
-          <div class="marquesina-wrapper reverse">
+          <div class="marquesina-wrapper reverse" data-marquee="galeria-der">
             <div class="marquesina-track">
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=11" />
+                <img
+                  src="https://picsum.photos/600/400?random=11"
+                  alt="Proyecto 11"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=12" />
+                <img
+                  src="https://picsum.photos/600/400?random=12"
+                  alt="Proyecto 12"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=13" />
+                <img
+                  src="https://picsum.photos/600/400?random=13"
+                  alt="Proyecto 13"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=14" />
+                <img
+                  src="https://picsum.photos/600/400?random=14"
+                  alt="Proyecto 14"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=15" />
+                <img
+                  src="https://picsum.photos/600/400?random=15"
+                  alt="Proyecto 15"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=16" />
+                <img
+                  src="https://picsum.photos/600/400?random=16"
+                  alt="Proyecto 16"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=17" />
+                <img
+                  src="https://picsum.photos/600/400?random=11"
+                  alt="Proyecto 11"
+                />
               </div>
               <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=18" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=19" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=20" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=11" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=12" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=13" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=14" />
-              </div>
-              <div class="marquesina-item">
-                <img src="https://picsum.photos/600/400?random=15" />
+                <img
+                  src="https://picsum.photos/600/400?random=12"
+                  alt="Proyecto 12"
+                />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- 3️⃣ PROMOCIONES -->
       <section class="seccion-promociones" id="promociones">
         <span class="etiqueta-pequena">Campañas</span>
         <h2 class="titulo-seccion">Promociones Destacadas</h2>
@@ -513,48 +671,142 @@
                   </video>
                 </div>
               </div>
-              <div class="swiper-slide">
-                <div class="caja-video-slider">
-                  <video controls preload="metadata">
-                    <source
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              </div>
-              <div class="swiper-slide">
-                <div class="caja-video-slider">
-                  <video controls preload="metadata">
-                    <source
-                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
-                      type="video/mp4"
-                    />
-                  </video>
-                </div>
-              </div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
+        </div>
+      </section>
+
+      <!-- 4️⃣ MARCAS (NUEVO GRID CON BOTONES) -->
+      <section class="seccion-estandar" id="marcas">
+        <span class="etiqueta-pequena">Clientes Destacados</span>
+        <h2 class="titulo-seccion">Marcas Trabajadas</h2>
+        <div class="contenedor-grid-marcas">
+          <a href="https://nike.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=21&blur=1&grayscale"
+              alt="Nike"
+            />
+            <div class="contenido-marca">
+              <h3>NIKE</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://adidas.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=22&blur=1&grayscale"
+              alt="Adidas"
+            />
+            <div class="contenido-marca">
+              <h3>ADIDAS</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://gucci.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=23&blur=1&grayscale"
+              alt="Gucci"
+            />
+            <div class="contenido-marca">
+              <h3>GUCCI</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://zara.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=24&blur=1&grayscale"
+              alt="Zara"
+            />
+            <div class="contenido-marca">
+              <h3>ZARA</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://versace.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=25&blur=1&grayscale"
+              alt="Versace"
+            />
+            <div class="contenido-marca">
+              <h3>VERSACE</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a
+            href="https://louisvuitton.com"
+            class="marca-boton"
+            target="_blank"
+          >
+            <img
+              src="https://picsum.photos/320/200?random=26&blur=1&grayscale"
+              alt="Louis Vuitton"
+            />
+            <div class="contenido-marca">
+              <h3>LOUIS VUITTON</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://prada.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=31&blur=1&grayscale"
+              alt="Prada"
+            />
+            <div class="contenido-marca">
+              <h3>PRADA</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <a href="https://chanel.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=32&blur=1&grayscale"
+              alt="Chanel"
+            />
+            <div class="contenido-marca">
+              <h3>CHANEL</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
+          <!-- PEGA DESPUÉS de la última marca (Chanel) -->
+          <a href="https://hermes.com" class="marca-boton" target="_blank">
+            <img
+              src="https://picsum.photos/320/200?random=33&blur=1&grayscale"
+              alt="Hermes"
+            />
+            <div class="contenido-marca">
+              <h3>HERMES</h3>
+              <p>Ver trabajos</p>
+            </div>
+          </a>
         </div>
       </section>
     </main>
 
     <footer class="pie-pagina">
       <div class="barra-redes">
-        <a href="#" class="icono-red"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="icono-red"><i class="fab fa-whatsapp"></i></a>
-        <a href="#" class="icono-red"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="icono-red"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="icono-red instagram" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="#" class="icono-red whatsapp" target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+        <a href="#" class="icono-red facebook" target="_blank"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="#" class="icono-red youtube" target="_blank"
+          ><i class="fab fa-youtube"></i
+        ></a>
       </div>
       <p style="opacity: 0.5; font-size: 0.8rem">
-        &copy; 2026 ROXELY Studio. Todos los derechos reservados.
+        © 2026 ROXELY Studio. Todos los derechos reservados.
       </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
+      // Inicializar AOS
       AOS.init({ duration: 1000, once: true });
+
+      // Inicializar Swiper
       new Swiper(".mySwiper", {
         grabCursor: true,
         loop: true,
@@ -562,6 +814,53 @@
         slidesPerView: 1,
         spaceBetween: 30,
         pagination: { el: ".swiper-pagination", clickable: true },
+      });
+
+      // DRAG & DROP SOLO PARA GALERÍA (marquesinas)
+      const marquees = document.querySelectorAll(".marquesina-wrapper");
+
+      marquees.forEach((marquee) => {
+        let isDragging = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        const track = marquee.querySelector(".marquesina-track");
+
+        const startDrag = (e) => {
+          isDragging = true;
+          marquee.classList.add("dragging");
+
+          startX = e.pageX || e.touches[0].pageX - marquee.offsetLeft;
+          scrollLeft = track.scrollLeft;
+          marquee.style.cursor = "grabbing";
+        };
+
+        const drag = (e) => {
+          if (!isDragging) return;
+          e.preventDefault();
+
+          const x = e.pageX || e.touches[0].pageX - marquee.offsetLeft;
+          const walk = (x - startX) * 2;
+          track.scrollLeft = scrollLeft - walk;
+        };
+
+        const endDrag = () => {
+          if (!isDragging) return;
+          isDragging = false;
+          marquee.classList.remove("dragging");
+          marquee.style.cursor = "grab";
+        };
+
+        marquee.addEventListener("mousedown", startDrag);
+        marquee.addEventListener("mousemove", drag);
+        marquee.addEventListener("mouseup", endDrag);
+        marquee.addEventListener("mouseleave", endDrag);
+
+        marquee.addEventListener("touchstart", startDrag);
+        marquee.addEventListener("touchmove", drag);
+        marquee.addEventListener("touchend", endDrag);
+
+        marquee.addEventListener("selectstart", (e) => e.preventDefault());
       });
     </script>
   </body>
