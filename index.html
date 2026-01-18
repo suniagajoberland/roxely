@@ -4,30 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>ROXELY | Edición de Video Profesional y Contenido Viral</title>
+    <title>ROXELY | Edición de Video Profesional</title>
     <meta
       name="description"
-      content="Transformamos tus ideas en piezas cinematográficas de alto impacto. Especialistas en post-producción, color grading y contenido para redes sociales."
+      content="Edición cinematográfica de alto impacto."
     />
-    <meta
-      name="keywords"
-      content="edición de video, postproducción, videocraft, editor de video profesional, contenido viral, color grading, filmmaking"
-    />
-    <meta name="author" content="VideoCraft Studio" />
-
-    <meta
-      property="og:title"
-      content="VideoCraft Studio | Visuales de Otro Nivel"
-    />
-    <meta
-      property="og:description"
-      content="Explora nuestro portafolio de edición cinematográfica profesional."
-    />
-    <meta property="og:type" content="website" />
-    <meta
-      property="og:image"
-      content="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=1200"
-    />
+    <meta name="author" content="ROXELY Studio" />
 
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
@@ -37,7 +19,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
@@ -50,24 +31,20 @@
 
     <style>
       :root {
-        --bg-deep: #0f172a;
-        --bg-card: #1e293b;
-        --accent-glow: #22d3ee;
-        --accent-main: #818cf8;
-        --accent-pink: #f472b6;
-        --text-white: #f8fafc;
-        --text-dim: #94a3b8;
-        --grad-vibrant: linear-gradient(
+        --color-fondo-oscuro: #0f172a;
+        --color-fondo-tarjeta: #1e293b;
+        --color-cian: #22d3ee;
+        --color-lavanda: #818cf8;
+        --color-rosa: #f472b6;
+        --texto-principal: #f8fafc;
+        --texto-secundario: #94a3b8;
+        --degradado-marca: linear-gradient(
           135deg,
-          #22d3ee 0%,
-          #818cf8 50%,
-          #f472b6 100%
+          var(--color-cian) 0%,
+          var(--color-lavanda) 50%,
+          var(--color-rosa) 100%
         );
-        --radius: 24px;
-        --instagram: #e1306c;
-        --facebook: #1877f2;
-        --youtube: #ff0000;
-        --whatsapp: #25d366;
+        --brand-whatsapp: #25d366;
       }
 
       * {
@@ -75,17 +52,18 @@
         padding: 0;
         box-sizing: border-box;
       }
+
       body {
         font-family: "Plus Jakarta Sans", sans-serif;
-        background-color: var(--bg-deep);
-        color: var(--text-white);
+        background-color: var(--color-fondo-oscuro);
+        color: var(--texto-principal);
         line-height: 1.6;
         overflow-x: hidden;
         scroll-behavior: smooth;
       }
 
-      /* HEADER */
-      header {
+      /* MENU */
+      .menu-principal {
         position: fixed;
         top: 0;
         width: 100%;
@@ -94,7 +72,7 @@
         background: rgba(15, 23, 42, 0.8);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
-      .nav-container {
+      .contenedor-navegacion {
         max-width: 1200px;
         margin: 0 auto;
         padding: 1.2rem 2rem;
@@ -102,73 +80,71 @@
         justify-content: space-between;
         align-items: center;
       }
-      .logo {
+      .logo-marca {
         font-family: "Outfit", sans-serif;
         font-size: 1.5rem;
         font-weight: 700;
-        background: var(--grad-vibrant);
+        background: var(--degradado-marca);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         text-decoration: none;
       }
-      .nav-links {
+      .lista-enlaces {
         display: flex;
         list-style: none;
         gap: 2rem;
       }
-      .nav-links a {
-        color: var(--text-dim);
+      .lista-enlaces a {
+        color: var(--texto-secundario);
         text-decoration: none;
         font-weight: 500;
-        font-size: 0.95rem;
         transition: 0.3s;
       }
-      .nav-links a:hover {
-        color: var(--accent-glow);
+      .lista-enlaces a:hover {
+        color: var(--color-cian);
       }
 
-      /* HERO (100vh) */
-      .hero {
+      /* HERO */
+      .hero-bienvenida {
+        position: relative;
         height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        clip-path: inset(0 0 0 0);
         display: flex;
         align-items: center;
         justify-content: center;
-        position: relative;
-        overflow: hidden;
         text-align: center;
       }
-      .hero-video-bg {
-        position: absolute;
+      .contenedor-video-fixed {
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        object-fit: cover;
         z-index: -1;
+      }
+      .video-fondo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
         opacity: 0.45;
       }
-      .hero-content {
+      .hero-bloque-texto {
         z-index: 2;
         padding: 0 20px;
       }
-      .hero-content h1 {
+      .hero-bloque-texto h1 {
         font-size: clamp(3rem, 10vw, 5.5rem);
         font-family: "Outfit";
         line-height: 1;
         margin-bottom: 1.5rem;
         font-weight: 800;
       }
-      .hero-content p {
-        color: var(--text-dim);
-        font-size: 1.2rem;
-        max-width: 650px;
-        margin: 0 auto 2.5rem;
-      }
-
-      .btn-main {
+      .boton-llamada-accion {
         padding: 1.1rem 2.8rem;
         border-radius: 50px;
-        background: var(--grad-vibrant);
+        background: var(--degradado-marca);
         color: white;
         text-decoration: none;
         font-weight: 700;
@@ -176,27 +152,24 @@
         display: inline-block;
         box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
       }
-      .btn-main:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 15px 30px rgba(34, 211, 238, 0.4);
-      }
 
-      /* SECCIONES GENERALES */
-      .section-padding {
-        padding: 100px 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
+      /* SECCIONES */
+      .seccion-estandar {
+        padding: 80px 0;
+        position: relative;
+        z-index: 1;
+        background: var(--color-fondo-oscuro);
       }
-      .section-title {
+      .titulo-seccion {
         font-family: "Outfit";
         font-size: 2.5rem;
         margin-bottom: 1rem;
         text-align: center;
       }
-      .section-tag {
+      .etiqueta-pequena {
         display: block;
         text-align: center;
-        color: var(--accent-glow);
+        color: var(--color-cian);
         text-transform: uppercase;
         font-weight: 700;
         font-size: 0.8rem;
@@ -204,270 +177,314 @@
         margin-bottom: 0.5rem;
       }
 
-      /* GALERIA */
-      .gallery-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-        gap: 2rem;
-        margin-top: 3rem;
-      }
-      .gallery-card {
-        background: var(--bg-card);
-        border-radius: var(--radius);
+      /* MARQUESINA GALERÍA */
+      .contenedor-marquesina {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
         overflow: hidden;
-        transition: 0.4s;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        padding: 40px 0;
       }
-      .gallery-card:hover {
-        transform: translateY(-10px);
-        border-color: var(--accent-main);
+      .marquesina-wrapper {
+        display: flex;
+        overflow: hidden;
+        mask-image: linear-gradient(
+          to right,
+          transparent,
+          black 15%,
+          black 85%,
+          transparent
+        );
       }
-      .gallery-card img,
-      .gallery-card video {
+      .marquesina-track {
+        display: flex;
+        gap: 20px;
+        flex-shrink: 0;
+        animation: scroll-izq 40s linear infinite;
+      }
+      .marquesina-wrapper.reverse .marquesina-track {
+        animation: scroll-der 40s linear infinite;
+      }
+      .marquesina-wrapper:hover .marquesina-track {
+        animation-play-state: paused;
+      }
+      .marquesina-item {
+        width: 320px;
+        height: 200px;
+        flex-shrink: 0;
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      .marquesina-item img {
         width: 100%;
-        height: 260px;
+        height: 100%;
         object-fit: cover;
-        display: block;
+        transition: 0.5s ease;
       }
-      .card-info {
-        padding: 1.5rem;
-      }
-      .card-info h3 {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-      .card-info p {
-        color: var(--text-dim);
-        font-size: 0.9rem;
+      .marquesina-item:hover img {
+        transform: scale(1.1);
       }
 
-      /* PROMOCIONES - CORRECCIÓN DE POSICIÓN */
-      .promo-section {
-        background: rgba(15, 23, 42, 0.5);
-        padding: 80px 0;
-        border-top: 1px solid rgba(255, 255, 255, 0.03);
+      @keyframes scroll-izq {
+        from {
+          transform: translateX(0);
+        }
+        to {
+          transform: translateX(-50%);
+        }
       }
-      .promo-container {
+      @keyframes scroll-der {
+        from {
+          transform: translateX(-50%);
+        }
+        to {
+          transform: translateX(0);
+        }
+      }
+
+      /* PROMOCIONES */
+      .seccion-promociones {
+        background: #0f172a;
+        padding: 80px 0 140px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+      .contenedor-slider {
         max-width: 900px;
         margin: 0 auto;
         padding: 0 20px;
       }
-
-      .swiper {
+      .caja-video-slider {
         width: 100%;
-        padding-bottom: 50px !important;
-      }
-
-      /* Ajuste Crucial para el centrado del segundo video */
-      .swiper-slide {
-        display: flex !important;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 100%;
-      }
-
-      .promo-vid-wrap {
-        width: 100%;
-        max-width: 650px;
         aspect-ratio: 16 / 9;
-        margin: 0 auto;
-        border-radius: 20px;
+        border-radius: 24px;
         overflow: hidden;
-        border: 2px solid rgba(129, 140, 248, 0.3);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 2px solid rgba(129, 140, 248, 0.2);
         background: #000;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
       }
-      .promo-vid-wrap video {
-        width: 100% !important;
-        height: 100% !important;
+      .caja-video-slider video {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
-        display: block;
+      }
+      .seccion-promociones .swiper-pagination {
+        bottom: 3px !important;
+      }
+      .seccion-promociones .swiper-pagination-bullet {
+        background: rgba(255, 255, 255, 0.2);
+      }
+      .seccion-promociones .swiper-pagination-bullet-active {
+        background: var(--color-cian);
       }
 
-      /* REDES SOCIALES Y CONTACTO */
-      .whatsapp-float {
+      /* FOOTER */
+      .whatsapp-flotante {
         position: fixed;
         bottom: 30px;
         right: 30px;
         width: 60px;
         height: 60px;
-        background-color: var(--whatsapp);
+        background-color: var(--brand-whatsapp);
         color: white;
-        border-radius: 50px;
+        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         font-size: 30px;
-        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         z-index: 2000;
+        box-shadow: 0 10px 25px rgba(37, 211, 102, 0.3);
         text-decoration: none;
-        transition: 0.3s;
       }
-      .whatsapp-float:hover {
-        transform: scale(1.1) rotate(10deg);
-      }
-
-      .social-bar {
-        display: flex;
-        gap: 1.5rem;
-        justify-content: center;
-        padding: 2rem 0;
-      }
-      .social-icon {
-        width: 50px;
-        height: 50px;
-        background: var(--bg-card);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--text-white);
-        font-size: 1.4rem;
-        text-decoration: none;
-        transition: 0.4s;
-        border: 1px solid rgba(255, 255, 255, 0.05);
-      }
-      .social-icon:hover {
-        transform: translateY(-5px);
-        color: white;
-      }
-      .social-icon.inst:hover {
-        background: var(--instagram);
-      }
-      .social-icon.wa:hover {
-        background: var(--whatsapp);
-      }
-      .social-icon.fb:hover {
-        background: var(--facebook);
-      }
-      .social-icon.yt:hover {
-        background: var(--youtube);
-      }
-
-      footer {
+      .pie-pagina {
         text-align: center;
         padding: 80px 20px;
         background: #080d1a;
-        color: var(--text-dim);
+      }
+      .barra-redes {
+        display: flex;
+        gap: 1.5rem;
+        justify-content: center;
+        margin: 2rem 0;
+      }
+      .icono-red {
+        width: 50px;
+        height: 50px;
+        background: var(--color-fondo-tarjeta);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+      .icono-red:hover {
+        background: var(--color-cian);
+        transform: translateY(-5px);
       }
 
       @media (max-width: 768px) {
-        .nav-links {
+        .lista-enlaces {
           display: none;
         }
-        .hero-content h1 {
-          font-size: 2.8rem;
-        }
-        .promo-vid-wrap {
-          max-width: 100%;
+        .marquesina-item {
+          width: 220px;
+          height: 150px;
         }
       }
     </style>
   </head>
+
   <body>
     <a
-      href="https://wa.me/TUNUMERO"
-      class="whatsapp-float"
+      href="https://wa.me/584143693311"
+      class="whatsapp-flotante"
       target="_blank"
-      aria-label="Contactar por WhatsApp"
-    >
-      <i class="fab fa-whatsapp"></i>
-    </a>
+      ><i class="fab fa-whatsapp"></i
+    ></a>
 
-    <header>
-      <nav class="nav-container">
-        <a href="#home" class="logo">ROXELY</a>
-        <ul class="nav-links">
-          <li><a href="#home">Inicio</a></li>
-          <li><a href="#gallery">Galería</a></li>
-          <li><a href="#promotions">Promociones</a></li>
+    <header class="menu-principal">
+      <nav class="contenedor-navegacion">
+        <a href="#inicio" class="logo-marca">ROXELY</a>
+        <ul class="lista-enlaces">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#promociones">Promociones</a></li>
         </ul>
       </nav>
     </header>
 
     <main>
-      <section class="hero" id="home">
-        <video
-          class="hero-video-bg"
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?auto=format&fit=crop&w=1920"
-        >
-          <source
-            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div class="hero-content" data-aos="zoom-out">
-          <span class="section-tag">High-End Post Production</span>
+      <section class="hero-bienvenida" id="inicio">
+        <div class="contenedor-video-fixed">
+          <video class="video-fondo" autoplay muted loop playsinline>
+            <source
+              src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+        <div class="hero-bloque-texto" data-aos="fade-up">
+          <span class="etiqueta-pequena">Studio de Edición Profesional</span>
           <h1>Visuales que<br />Dominan el Feed.</h1>
-          <p>
-            Edición cinematográfica y contenido de alto impacto diseñado para
-            marcas que buscan liderar su industria.
-          </p>
-          <a href="#gallery" class="btn-main">Explorar Portafolio</a>
+          <a href="#galeria" class="boton-llamada-accion">Ver Galería</a>
         </div>
       </section>
 
-      <section class="section-padding" id="gallery">
-        <span class="section-tag">Showcase</span>
-        <h2 class="section-title">Nuestros Trabajos</h2>
-        <div class="gallery-grid">
-          <article class="gallery-card" data-aos="fade-up">
-            <img
-              src="https://images.unsplash.com/photo-1536240478700-b869070f9279?auto=format&fit=crop&w=600"
-              alt="Trabajo de edición comercial"
-            />
-            <div class="card-info">
-              <h3>Fashion Film</h3>
-              <p>Corrección de color premium.</p>
+      <section class="seccion-estandar" id="galeria">
+        <span class="etiqueta-pequena">Portafolio Dinámico</span>
+        <h2 class="titulo-seccion">Proyectos Recientes</h2>
+        <div class="contenedor-marquesina">
+          <div class="marquesina-wrapper">
+            <div class="marquesina-track">
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=1" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=2" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=3" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=4" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=5" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=6" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=7" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=8" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=9" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=10" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=1" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=2" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=3" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=4" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=5" />
+              </div>
             </div>
-          </article>
-          <article class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-            <video
-              muted
-              loop
-              onmouseover="this.play()"
-              onmouseout="this.pause()"
-            >
-              <source
-                src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4"
-                type="video/mp4"
-              />
-            </video>
-            <div class="card-info">
-              <h3>Sport Ads</h3>
-              <p>Montaje dinámico de alta velocidad.</p>
+          </div>
+          <div class="marquesina-wrapper reverse">
+            <div class="marquesina-track">
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=11" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=12" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=13" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=14" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=15" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=16" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=17" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=18" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=19" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=20" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=11" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=12" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=13" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=14" />
+              </div>
+              <div class="marquesina-item">
+                <img src="https://picsum.photos/600/400?random=15" />
+              </div>
             </div>
-          </article>
-          <article class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-            <img
-              src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600"
-              alt="Motion graphics y efectos"
-            />
-            <div class="card-info">
-              <h3>Motion Design</h3>
-              <p>VFX y composición digital.</p>
-            </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section class="promo-section" id="promotions">
-        <div
-          class="section-padding"
-          style="padding-top: 0; padding-bottom: 20px"
-        >
-          <span class="section-tag">Highlights</span>
-          <h2 class="section-title">Campañas Destacadas</h2>
-        </div>
-        <div class="promo-container" data-aos="fade-up">
+      <section class="seccion-promociones" id="promociones">
+        <span class="etiqueta-pequena">Campañas</span>
+        <h2 class="titulo-seccion">Promociones Destacadas</h2>
+        <div class="contenedor-slider" data-aos="fade-up">
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <div class="promo-vid-wrap">
+                <div class="caja-video-slider">
                   <video controls preload="metadata">
                     <source
                       src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4"
@@ -477,10 +494,40 @@
                 </div>
               </div>
               <div class="swiper-slide">
-                <div class="promo-vid-wrap">
+                <div class="caja-video-slider">
                   <video controls preload="metadata">
                     <source
                       src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caja-video-slider">
+                  <video controls preload="metadata">
+                    <source
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caja-video-slider">
+                  <video controls preload="metadata">
+                    <source
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/Sintel.mp4"
+                      type="video/mp4"
+                    />
+                  </video>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="caja-video-slider">
+                  <video controls preload="metadata">
+                    <source
+                      src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4"
                       type="video/mp4"
                     />
                   </video>
@@ -493,56 +540,28 @@
       </section>
     </main>
 
-    <footer>
-      <div class="section-tag">Conectemos</div>
-      <h2
-        style="
-          color: white;
-          margin: 1rem 0 2rem;
-          font-family: &quot;Outfit&quot;;
-        "
-      >
-        Síguenos en Redes
-      </h2>
-
-      <div class="social-bar">
-        <a href="#" class="social-icon inst" aria-label="Instagram"
-          ><i class="fab fa-instagram"></i
-        ></a>
-        <a href="#" class="social-icon wa" aria-label="WhatsApp"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-        <a href="#" class="social-icon fb" aria-label="Facebook"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="#" class="social-icon yt" aria-label="YouTube"
-          ><i class="fab fa-youtube"></i
-        ></a>
+    <footer class="pie-pagina">
+      <div class="barra-redes">
+        <a href="#" class="icono-red"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="icono-red"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="icono-red"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="icono-red"><i class="fab fa-youtube"></i></a>
       </div>
-
-      <p style="margin-top: 3rem; font-size: 0.8rem; opacity: 0.5">
+      <p style="opacity: 0.5; font-size: 0.8rem">
         &copy; 2026 ROXELY Studio. Todos los derechos reservados.
       </p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-      // Inicializar animaciones al cargar
       AOS.init({ duration: 1000, once: true });
-
-      // Inicializar Swiper con corrección de centrado
-      const swiper = new Swiper(".mySwiper", {
+      new Swiper(".mySwiper", {
         grabCursor: true,
         loop: true,
         centeredSlides: true,
         slidesPerView: 1,
-        spaceBetween: 50,
-        observer: true,
-        observeParents: true,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
+        spaceBetween: 30,
+        pagination: { el: ".swiper-pagination", clickable: true },
       });
     </script>
   </body>
