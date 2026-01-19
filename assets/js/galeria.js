@@ -2,21 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   const gridVideos = document.getElementById("gridVideos");
 
   const videos = [
-    "assets/video/Redes_Sociales/¿A quién más le pasa esto _Es que cuando abro un Bon o Bon ¡todos quieren! Así que silencio   el que come callado come dos veces.mp4",
-    "assets/video/Redes_Sociales/AUDAX E IVECO - V3 - UPPER.mp4",
-    "assets/video/Redes_Sociales/BonoBon.mp4",
-    "assets/video/Redes_Sociales/Churu cierre.mp4",
-    "assets/video/Redes_Sociales/Cuando Selz llega a la junta, todo es mejor   _.mp4",
-    "assets/video/Redes_Sociales/Descubre Fan, donde tu historia de hogar comienza con una sorpresa- ¡Fai te regala 18 millones de pie!   _Convierte cada rincón en un tesoro de recuerdos, desata tu creatividad y deja que tu primer hogar sea de .mp4",
-    "assets/video/Redes_Sociales/Eucerin1.mp4",
-    "assets/video/Redes_Sociales/KAMPAI (1).mp4",
-    "assets/video/Redes_Sociales/Kampai.mp4",
-    "assets/video/Redes_Sociales/La habitación es un lugar de reflexión, estudio y tranquilidad. _Integra detalles que transmiten armonía y juega con la luz para generar más amplitud en el cuarto.  _Sobre todo para los pequeños de la casa, es i.mp4",
-    "assets/video/Redes_Sociales/Maratón 1.mp4",
-    "assets/video/Redes_Sociales/Montana_3.mov",
-    "assets/video/Redes_Sociales/No te desenfoques y tu sueño se hará realidad  _ (1).mp4",
-    "assets/video/Redes_Sociales/novios.mp4",
-    "assets/video/Redes_Sociales/Suerox.mp4",
+    "/assets/video/Redes_Sociales/Alto Japón 1.mp4",
+    "/assets/video/Redes_Sociales/Alto Japón 2.mp4",
+    "/assets/video/Redes_Sociales/Alto Japon 3.mp4",
     // "assets/video/Redes_Sociales/",
   ].filter(Boolean);
 
