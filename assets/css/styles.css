@@ -26,12 +26,14 @@
 }
 
 body {
+  max-width: 100%;
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--color-fondo-oscuro);
   color: var(--texto-principal);
   line-height: 1.6;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  position: relative;
 }
 
 /* MENU */
