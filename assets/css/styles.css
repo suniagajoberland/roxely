@@ -472,6 +472,9 @@ body {
     transparent
   );
   border-radius: 20px;
+  cursor: default; 
+  touch-action: pan-y; /* Permite que el dedo haga scroll hacia abajo sin trabarse */
+  user-select: none;   /* Evita que se seleccione el contenido por error */
 }
 
 .marquesina-track {
