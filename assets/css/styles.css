@@ -278,18 +278,6 @@ body {
   font-style: italic;
 }
 
-/* MARQUESINA */
-/* CONTENEDOR PRINCIPAL NIVELADO */
-.grid-corporativo-nivelado {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Mitad y mitad */
-  align-items: stretch; /* Fuerza a que ambas columnas midan lo mismo */
-  border-radius: 24px;
-  overflow: hidden;
-  background: rgba(15, 23, 42, 0.4);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
 /* COLUMNA VIDEO */
 .columna-video-corp {
   width: 100%;
