@@ -232,7 +232,7 @@ body {
 
 .contenedor-slider {
   width: 100%;
-  max-width: 100%; /* Ancho máximo para mantener estética de smartphone */
+  max-width: 420px; /* Ancho máximo para mantener estética de smartphone */
   padding: 0 15px;
   box-sizing: border-box;
   display: flex;
