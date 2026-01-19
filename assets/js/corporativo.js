@@ -5,6 +5,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Videos corporativos (puedes cambiar rutas)
   const videosCorporativos = [
     "/assets/video/corportaivo/Minina.mp4",
+    "/assets/video/corportaivo/Trident 1.mp4",
+    "/assets/video/corportaivo/Truck Fest.mp4",
+    "/assets/video/corportaivo/Andes Maq Evento .mp4",
+    "/assets/video/corportaivo/",
     // "assets/video/corportaivo",
   ].filter(Boolean);
 
