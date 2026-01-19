@@ -217,6 +217,7 @@ body {
 
 /* Ajuste de margen en los títulos para pegar más el contenido */
 .titulo-seccion {
+  text-align: center;
   margin-bottom: 30px; /* Reducimos el margen inferior del título si es necesario */
 }
 
@@ -452,38 +453,31 @@ body {
   }
 }
 
-/* MARCAS */
-/* MARQUESINAS OPTIMIZADAS (SIN DRAG) */
+/* ==========================================================================
+   MARQUESINAS OPTIMIZADAS (ESTILO FINAL)
+   ========================================================================== */
+
 .contenedor-marquesina {
   display: flex;
   flex-direction: column;
   gap: 30px;
   overflow: hidden;
   padding: 40px 0;
+  width: 100%; /* Asegura que ocupe todo el ancho para centrar contenido */
 }
 
 .marquesina-wrapper {
   display: flex;
   overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  -webkit-mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
+  /* Máscara para desvanecer bordes */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
   border-radius: 20px;
-
-  /* LAS DOS LÍNEAS CLAVE */
+  
+  /* Reset de interacción: Sin manito y con scroll fluido en móvil */
   cursor: default !important;
   touch-action: pan-y !important;
+  user-select: none;
 }
 
 .marquesina-track {
@@ -492,7 +486,8 @@ body {
   flex-shrink: 0;
   animation: scroll-izq 20s linear infinite;
   padding: 10px 0;
-  will-change: transform; /* Ayuda a que la animación no use CPU de más */
+  will-change: transform; /* Optimización de rendimiento */
+  /* Eliminamos transition: transform para evitar saltos con la animación */
 }
 
 .marquesina-wrapper.reverse .marquesina-track {
@@ -505,113 +500,37 @@ body {
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  transition: all 0.3s ease;
-}
-
-/* El hover sigue funcionando para que se vea interactivo */
-.marquesina-item:hover {
-  transform: scale(1.05);
-}
-
-.marquesina-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Cambiado a cover para que no queden bordes negros */
-  pointer-events: none; /* Evita que el móvil intente "arrastrar" la foto */
-}
-
-/* KEYFRAMES (No los borres, son los que hacen el movimiento) */
-@keyframes scroll-izq {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes scroll-der {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-.contenedor-marquesina {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  overflow: hidden;
-  padding: 40px 0;
-}
-.marquesina-wrapper {
-  display: flex;
-  overflow: hidden;
-  mask-image: linear-gradient(
-    to right,
-    transparent,
-    black 15%,
-    black 85%,
-    transparent
-  );
-  border-radius: 20px;
-  cursor: default;
-  touch-action: pan-y; /* Permite que el dedo haga scroll hacia abajo sin trabarse */
-  user-select: none; /* Evita que se seleccione el contenido por error */
-}
-
-.marquesina-track {
-  display: flex;
-  gap: 20px;
-  flex-shrink: 0;
-  animation: scroll-izq 20s linear infinite;
-  transition: transform 0.3s ease;
-  padding: 10px 0;
-  will-change: transform;
-}
-.marquesina-wrapper.reverse .marquesina-track {
-  animation: scroll-der 20s linear infinite;
-}
-.marquesina-item {
-  width: 320px;
-  height: 200px;
-  flex-shrink: 0;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+  border: 1px solid transparent;
   -webkit-user-drag: none;
 }
+
 .marquesina-item:hover {
   transform: scale(1.05);
   border-color: var(--color-cian);
 }
+
 .marquesina-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  transition: 0.5s ease;
+  object-fit: contain; /* Cambiado a cover para que se vea nivelado y profesional */
+  transition: transform 0.5s ease;
   pointer-events: none;
 }
+
 .marquesina-item:hover img {
   transform: scale(1.1);
 }
 
+/* KEYFRAMES */
 @keyframes scroll-izq {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
-  }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
+
 @keyframes scroll-der {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 /* FIN MARCAS */
 
