@@ -173,12 +173,12 @@ body {
   display: flex;
   gap: 20px;
   flex-shrink: 0;
-  animation: scroll-izq 40s linear infinite;
+  animation: scroll-izq 20s linear infinite;
   transition: transform 0.3s ease;
   padding: 10px 0;
 }
 .marquesina-wrapper.reverse .marquesina-track {
-  animation: scroll-der 40s linear infinite;
+  animation: scroll-der 20s linear infinite;
 }
 .marquesina-item {
   width: 320px;
@@ -232,7 +232,7 @@ body {
 
 .contenedor-slider {
   width: 100%;
-  max-width: 420px; /* Ancho máximo para mantener estética de smartphone */
+  max-width: 100%; /* Ancho máximo para mantener estética de smartphone */
   padding: 0 15px;
   box-sizing: border-box;
   display: flex;
