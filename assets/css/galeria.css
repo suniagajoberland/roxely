@@ -1,0 +1,106 @@
+/* --- CONFIGURACIÓN DE PÁGINA --- */
+.galeria-container {
+  padding: 120px 20px 80px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.header-galeria {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+/* --- GRID DE 3 COLUMNAS --- */
+.grid-videos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 60px;
+}
+
+/* --- VIDEO ITEMS (Tus medidas de 500px) --- */
+.video-item {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-fondo-tarjeta);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.video-item video {
+  width: 100%;
+  height: 500px; /* Mantengo tu altura original de galería */
+  object-fit: cover;
+  display: block;
+}
+
+.video-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(34, 211, 238, 0.2);
+  border-color: var(--color-cian);
+}
+
+/* --- BARRAS DE PROGRESO Y BUFFER (Estilo Corporativo) --- */
+.video-controls-mini {
+  position: absolute;
+  bottom: 0; left: 0; width: 100%;
+  height: 5px;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-playing .video-controls-mini { opacity: 1; }
+.progress-container { width: 100%; height: 100%; background: rgba(0,0,0,0.5); position: relative; }
+.buffer-bar { position: absolute; height: 100%; background: rgba(255,255,255,0.3); width: 0%; z-index: 1; }
+.play-bar { position: absolute; height: 100%; background: var(--color-cian); width: 0%; z-index: 2; }
+
+/* --- MENÚ CON ICONOS (Adaptado a tus 3 páginas) --- */
+.lista-enlaces li a i {
+  display: none; /* Oculto en PC */
+}
+
+@media (max-width: 768px) {
+  .grid-videos {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .video-item video { height: 400px; }
+
+  /* MÓVIL: SOLO Inicio, Redes Sociales y Corporativo visibles */
+  .nav-hacemos, .nav-marcas {
+    display: none !important;
+  }
+
+  .lista-enlaces {
+    display: flex !important;
+    gap: 25px !important;
+    justify-content: flex-end;
+  }
+
+  /* Cambiar Texto por Icono */
+  .lista-enlaces li a span {
+    display: none;
+  }
+
+  .lista-enlaces li a i {
+    display: inline-block;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  /* Resaltar página activa */
+  .lista-enlaces li a.active i {
+    color: var(--color-cian);
+  }
+
+  .logo-marca { font-size: 1.2rem !important; }
+}
+
+/* Estilo para el ítem activo en Desktop */
+.menu-galeria li a.active {
+  color: var(--color-cian) !important;
+}

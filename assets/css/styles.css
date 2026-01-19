@@ -1,0 +1,649 @@
+:root {
+  --color-fondo-oscuro: #0f172a;
+  --color-fondo-tarjeta: #1e293b;
+  --color-cian: #22d3ee;
+  --color-lavanda: #818cf8;
+  --color-rosa: #f472b6;
+  --texto-principal: #f8fafc;
+  --texto-secundario: #94a3b8;
+  --degradado-marca: linear-gradient(
+    135deg,
+    var(--color-cian) 0%,
+    var(--color-lavanda) 50%,
+    var(--color-rosa) 100%
+  );
+  --brand-whatsapp: #25d366;
+  --brand-instagram: #e4405f;
+  --brand-facebook: #1877f2;
+  --brand-youtube: #ff0000;
+  --brand-tiktok: #000000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 100%;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  background-color: var(--color-fondo-oscuro);
+  color: var(--texto-principal);
+  line-height: 1.6;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* BOTÓN WHATSAPP FLOTANTE */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 30px; /* Distancia desde abajo */
+  right: 30px; /* Distancia desde la derecha */
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde oficial de WhatsApp */
+  color: #fff !important;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  z-index: 9999; /* Asegura que siempre esté al frente */
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+  background-color: #1ebea5;
+  color: white;
+}
+
+/* Ajuste para móviles */
+@media (max-width: 768px) {
+  .whatsapp-flotante {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 28px;
+  }
+}
+
+/* ==========================================================================
+   MENU - ADAPTACIÓN SMART ICONS
+   ========================================================================== */
+.menu-principal {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.contenedor-navegacion {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.2rem 4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-marca {
+  font-family: "Outfit", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--degradado-marca);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.lista-enlaces {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  align-items: center;
+}
+
+.lista-enlaces li a {
+  color: var(--texto-secundario);
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Iconos ocultos en Escritorio */
+.lista-enlaces li a i {
+  display: none;
+}
+
+.lista-enlaces li a:hover,
+.lista-enlaces li a.active {
+  color: var(--color-cian);
+}
+
+/* ==========================================================================
+   HERO - VIDEO FONDO
+   ========================================================================== */
+.hero-bienvenida {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contenedor-video-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.video-fondo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.45;
+}
+
+.hero-bloque-texto {
+  z-index: 20;
+  position: relative;
+  padding: 0 20px;
+  max-width: 800px;
+}
+
+.hero-bloque-texto h1 {
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-family: "Outfit";
+  line-height: 1;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+}
+
+.boton-llamada-accion {
+  padding: 1.1rem 2.8rem;
+  border-radius: 50px;
+  background: var(--degradado-marca);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
+  display: inline-block;
+  box-shadow: 0 10px 20px rgba(34, 211, 238, 0.2);
+}
+
+.boton-llamada-accion:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(34, 211, 238, 0.3);
+}
+
+/* ✅ SECCIONES */
+.seccion-que-hacemos,
+.seccion-estandar,
+.seccion-promociones {
+  position: relative;
+  z-index: 10;
+  background: var(--color-fondo-oscuro) !important;
+  padding: 100px 0;
+  min-height: 100vh;
+}
+
+.seccion-que-hacemos {
+  padding: 120px 0 100px;
+}
+
+.titulo-seccion {
+  font-family: "Outfit";
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.etiqueta-pequena {
+  display: block;
+  text-align: center;
+  color: var(--color-cian);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+/* QUÉ HACEMOS */
+.contenedor-manifiesto {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.texto-principal-hacemos {
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 50px;
+  background: linear-gradient(to right, #fff, var(--texto-secundario));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+}
+
+.grid-sub-bloque {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 40px;
+}
+
+.sub-texto {
+  color: var(--texto-secundario);
+  font-size: 1.1rem;
+}
+.sub-texto strong {
+  color: var(--color-cian);
+  display: block;
+  margin-bottom: 10px;
+  font-family: "Outfit";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.meta-destacada {
+  border-left: 2px solid var(--color-lavanda);
+  padding-left: 20px;
+  font-style: italic;
+}
+
+/* MARQUESINA */
+/* CONTENEDOR PRINCIPAL NIVELADO */
+.grid-corporativo-nivelado {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Mitad y mitad */
+  align-items: stretch; /* Fuerza a que ambas columnas midan lo mismo */
+  border-radius: 24px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* COLUMNA VIDEO */
+.columna-video-corp {
+  width: 100%;
+  overflow: hidden;
+}
+
+.columna-video-corp video {
+  width: 100%;
+  height: 100%; /* Ocupa todo el alto de la columna de texto */
+  object-fit: cover; /* No se deforma, se recorta para llenar el espacio */
+  display: block;
+}
+
+/* COLUMNA TEXTO */
+.columna-texto-corp {
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.columna-texto-corp p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  max-width: 450px;
+}
+
+/* AJUSTE MÓVIL */
+@media (max-width: 850px) {
+  .grid-corporativo-nivelado {
+    grid-template-columns: 1fr; /* Se apilan en móvil */
+  }
+
+  .columna-video-corp {
+    height: 350px; /* Altura fija para que el video luzca bien en móvil */
+  }
+}
+
+/* ==========================================================================
+   ESTILOS SECCIÓN STOP MOTION
+   ========================================================================== */
+
+.grid-stop-motion {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 columnas iguales */
+  gap: 25px;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.video-item-sm {
+  width: 100%;
+  aspect-ratio: 9 / 16; /* Formato vertical (Reels/TikTok) */
+  background: var(--color-fondo-tarjeta);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.video-item-sm:hover {
+  transform: translateY(-10px);
+  border-color: var(--color-cian);
+  box-shadow: 0 15px 30px rgba(34, 211, 238, 0.15);
+}
+
+.video-item-sm video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Asegura que el video llene el contenedor */
+}
+
+/* --- RESPONSIVE STOP MOTION --- */
+@media (max-width: 992px) {
+  .grid-stop-motion {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-stop-motion {
+    grid-template-columns: 1fr; /* 1 columna en móvil */
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .video-item-sm {
+    max-width: 300px; /* Evita que el video sea gigante en móvil */
+    margin: 0 auto;
+  }
+}
+
+/* ==========================================================================
+   ESTILOS CORPORATIVO (ALTURAS IGUALADAS Y TÍTULO CENTRADO)
+   ========================================================================== */
+
+.grid-corporativo-nivelado {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
+  gap: 0; /* Sin espacio para que se unan perfectamente, o añade gap si prefieres separación */
+  align-items: stretch; /* ESTO asegura que midan lo mismo de alto */
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+}
+
+.columna-video-corp {
+  line-height: 0; /* Elimina espacios residuales debajo del video */
+}
+
+.columna-video-corp video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Importante para que el video llene su mitad */
+}
+
+.columna-texto-corp {
+  background: rgba(30, 41, 59, 0.8); /* Fondo para resaltar el área de texto */
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra el texto verticalmente dentro de su alto */
+  align-items: center; /* Centra el texto horizontalmente */
+  text-align: center;
+}
+
+.columna-texto-corp p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--texto-principal);
+  font-family: "Outfit", sans-serif;
+  margin-bottom: 30px;
+  max-width: 400px;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 850px) {
+  .grid-corporativo-nivelado {
+    grid-template-columns: 1fr; /* En móvil una columna sobre otra */
+  }
+
+  .columna-texto-corp {
+    padding: 30px 20px;
+  }
+
+  .columna-video-corp {
+    aspect-ratio: 16 / 9; /* En móvil el video mantiene forma clásica */
+  }
+}
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .grid-corporativo {
+    grid-template-columns: 1fr; /* Una columna en móvil */
+  }
+
+  .video-item-corp {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+}
+
+/* MARCAS */
+.contenedor-marquesina {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  overflow: hidden;
+  padding: 40px 0;
+}
+.marquesina-wrapper {
+  display: flex;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  border-radius: 20px;
+}
+
+.marquesina-track {
+  display: flex;
+  gap: 20px;
+  flex-shrink: 0;
+  animation: scroll-izq 20s linear infinite;
+  transition: transform 0.3s ease;
+  padding: 10px 0;
+}
+.marquesina-wrapper.reverse .marquesina-track {
+  animation: scroll-der 20s linear infinite;
+}
+.marquesina-item {
+  width: 320px;
+  height: 200px;
+  flex-shrink: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.marquesina-item:hover {
+  transform: scale(1.05);
+  border-color: var(--color-cian);
+}
+.marquesina-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: 0.5s ease;
+}
+.marquesina-item:hover img {
+  transform: scale(1.1);
+}
+
+@keyframes scroll-izq {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes scroll-der {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+/* FIN MARCAS */
+
+/* FOOTER */
+.pie-pagina {
+  position: relative;
+  z-index: 50;
+  background: linear-gradient(180deg, #080d1a 0%, #0f172a 100%) !important;
+  padding: 80px 20px 60px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.icono-red {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 1.6rem;
+}
+
+.icono-red.instagram {
+  background-color: var(--brand-instagram);
+}
+.icono-red.whatsapp {
+  background-color: var(--brand-whatsapp);
+}
+/* CENTRADO DE REDES EN EL FOOTER */
+.barra-redes {
+  display: flex; /* Activa el modo flexible */
+  justify-content: center; /* Centra horizontalmente los iconos */
+  align-items: center; /* Centra verticalmente */
+  gap: 1.5rem; /* Espacio entre los iconos */
+  margin: 2rem 0; /* Espacio arriba y abajo del bloque */
+  width: 100%; /* Asegura que use todo el ancho para poder centrar */
+}
+
+/* Ajuste específico para móvil para que se mantengan centrados y bien espaciados */
+@media (max-width: 768px) {
+  .barra-redes {
+    justify-content: center !important; /* Refuerza el centrado en móvil */
+    gap: 1.2rem; /* Espacio un poco más pequeño en móviles */
+    margin: 1.5rem 0;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE (CORREGIDO PARA NO ROMPER)
+   ========================================================================== */
+
+/* 📱 MOBILE & TABLET (Hasta 768px) */
+@media (max-width: 768px) {
+  /* Cambio crítico: Ya no ocultamos la lista, la adaptamos */
+  .lista-enlaces {
+    display: flex !important;
+    gap: 1.2rem !important;
+  }
+
+  /* Ocultamos ítems secundarios y el texto */
+  .nav-hacemos,
+  .nav-marcas,
+  .lista-enlaces li a span {
+    display: none !important;
+  }
+
+  /* Mostramos iconos */
+  .lista-enlaces li a i {
+    display: inline-block !important;
+    font-size: 1.4rem;
+    color: white;
+  }
+
+  .lista-enlaces li a.active i {
+    color: var(--color-cian);
+  }
+
+  .contenedor-navegacion {
+    padding: 1rem 5%;
+  }
+
+  .logo-marca {
+    font-size: 1.2rem !important;
+  }
+
+  .hero-bloque-texto h1 {
+    font-size: 2.5rem !important;
+  }
+  .grid-sub-bloque {
+    grid-template-columns: 1fr !important;
+  }
+  .caja-video-vertical img {
+    height: 350px !important;
+  }
+}
+
+/* 📱 MOBILE EXTRA (Hasta 480px) */
+@media (max-width: 480px) {
+  .whatsapp-flotante {
+    width: 55px;
+    height: 55px;
+    bottom: 20px;
+    right: 20px;
+  }
+  .icono-red {
+    width: 55px !important;
+    height: 55px !important;
+    font-size: 1.3rem !important;
+  }
+}
+
+/* 🎯 ANCHO 100% */
+.seccion-estandar,
+.seccion-que-hacemos,
+.seccion-promociones,
+.hero-bienvenida {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}

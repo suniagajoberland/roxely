@@ -1,0 +1,123 @@
+/* ==========================================================================
+   CSS CORPORATIVO - MANTENIENDO MEDIDAS ORIGINALES + ICONOS
+   ========================================================================== */
+
+/* 1. MANTENER TUS MEDIDAS DE GRID ORIGINALES */
+.corporativo-container {
+    padding: 120px 20px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header-corporativo {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+.grid-corporativo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 60px;
+}
+
+/* 2. ESTILO DEL MENU (Medidas Desktop Originales) */
+.lista-enlaces {
+    display: flex;
+    gap: 30px; /* Tu gap original */
+    list-style: none;
+    align-items: center;
+}
+
+.lista-enlaces li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95rem; /* Tu medida original */
+    transition: all 0.3s ease;
+}
+
+/* Iconos ocultos por defecto en PC */
+.lista-enlaces li a i {
+    display: none;
+}
+
+.lista-enlaces li a.active {
+    color: var(--color-cian) !important;
+}
+
+/* 3. VIDEO ITEMS (Tus alturas originales) */
+.video-item {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--color-fondo-tarjeta);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    height: 100%;
+}
+
+.video-item video {
+    width: 100%;
+    height: 350px; /* Tu altura original */
+    object-fit: cover;
+    display: block;
+}
+
+/* 4. BARRAS DE PROGRESO (Añadidas sutilmente) */
+.video-controls-mini {
+    position: absolute;
+    bottom: 0; left: 0; width: 100%;
+    height: 4px;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-playing .video-controls-mini { opacity: 1; }
+
+.progress-container { width: 100%; height: 100%; background: rgba(0,0,0,0.5); position: relative; }
+.buffer-bar { position: absolute; height: 100%; background: rgba(255,255,255,0.3); width: 0%; z-index: 1; }
+.play-bar { position: absolute; height: 100%; background: var(--color-cian); width: 0%; z-index: 2; }
+
+/* 5. RESPONSIVE CON ICONOS (Sin romper medidas) */
+@media (max-width: 768px) {
+    /* Mantener 1 columna en móvil */
+    .grid-corporativo {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .video-item video {
+        height: 300px;
+    }
+
+    /* FILTRADO DE ITEMS: Solo Inicio, Redes y Corp */
+    .nav-hacemos, .nav-marcas {
+        display: none !important;
+    }
+
+    /* AJUSTE DE MENU A ICONOS */
+    .lista-enlaces {
+        gap: 20px !important; /* Espacio optimizado para dedos en móvil */
+    }
+
+    .lista-enlaces li a span {
+        display: none; /* Oculta el texto */
+    }
+
+    .lista-enlaces li a i {
+        display: inline-block; /* Muestra el icono */
+        font-size: 1.3rem; /* Medida estándar de iconos legibles */
+        color: white;
+    }
+
+    .lista-enlaces li a.active i {
+        color: var(--color-cian);
+    }
+
+    .logo-marca {
+        font-size: 1.2rem !important;
+    }
+}

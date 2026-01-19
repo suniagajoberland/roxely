@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galeria | UPPER CREATORS</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/galeria.css" />
+  </head>
+
+  <body>
+    <!-- WhatsApp flotante -->
+    <a
+      href="https://wa.me/56942709831?text=Hola, llegué desde la galería.%0AQuiero ver más detalle de los videos."
+      class="whatsapp-flotante"
+      target="_blank"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- MENU SIMPLIFICADO -->
+    <header class="menu-principal">
+      <nav class="contenedor-navegacion">
+        <a href="index.html#inicio" class="logo-marca">UPPER CREATORS</a>
+
+        <ul class="lista-enlaces menu-galeria">
+          <li class="nav-inicio">
+            <a href="index.html#inicio">
+              <i class="fas fa-home"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+
+          <li class="nav-hacemos">
+            <a href="index.html#que-hacemos">
+              <span>Qué Hacemos</span>
+            </a>
+          </li>
+
+          <li class="nav-redes">
+            <a href="galeria.html" class="active">
+              <i class="fas fa-camera-retro"></i>
+              <span>Redes Sociales</span>
+            </a>
+          </li>
+
+          <li class="nav-corp">
+            <a href="corporativo.html">
+              <i class="fas fa-briefcase"></i>
+              <span>Corporativo</span>
+            </a>
+          </li>
+
+          <li class="nav-marcas">
+            <a href="index.html#marcas">
+              <span>Marcas</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="galeria-container">
+      <div class="header-galeria">
+        <span class="etiqueta-pequena">PORTAFOLIO</span>
+        <h1 class="titulo-seccion">Redes Sociales</h1>
+      </div>
+
+      <div class="grid-videos" id="gridVideos">
+        <div
+          style="
+            grid-column: 1/-1;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: var(--texto-secundario);
+          "
+        >
+          Cargando videos...
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="pie-pagina">
+      <div class="barra-redes">
+        <a
+          href="https://www.instagram.com/uppercreators?igsh=MXh3aWYyOXBwcHo5Zg%3D%3D&utm_source=qr"
+          class="icono-red instagram"
+          target="_blank"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes."
+          class="icono-red whatsapp"
+          target="_blank"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+      <p style="opacity: 0.5; font-size: 0.8rem">
+        © 2026 UPPER CREATORS. Todos los derechos reservados.
+      </p>
+    </footer>
+
+    <script src="assets/js/galeria.js"></script>
+  </body>
+</html>
