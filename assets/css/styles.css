@@ -25,7 +25,8 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+html {
   max-width: 100%;
   font-family: "Plus Jakarta Sans", sans-serif;
   background-color: var(--color-fondo-oscuro);
@@ -234,8 +235,8 @@ body {
 
 .contenedor-slider {
   width: 100%;
-  max-width: 420px; /* Ancho máximo para mantener estética de smartphone */
-  padding: 0 15px;
+  max-width: 100%; /* Ancho máximo para mantener estética de smartphone */
+  padding: 0 20px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -243,6 +244,7 @@ body {
 
 .caja-video-slider {
   width: 100%;
+  max-width: 100%;
   /* El secreto para visibilidad total: */
   max-height: 85vh; /* No permite que el video sea más alto que la pantalla del móvil */
   aspect-ratio: 9 / 16;
