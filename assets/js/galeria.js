@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", function () {
     "/assets/video/Redes_Sociales/Atelier Milano .mp4",
     "/assets/video/Redes_Sociales/Bon O Bon 4.mp4",
     "/assets/video/Redes_Sociales/Churu despedida.mp4",
+    "/assets/video/Redes_Sociales/Copas Bon O Bon.mp4",
+    "/assets/video/Redes_Sociales/Fai 1.mp4",
+    "/assets/video/Redes_Sociales/Fai 2.mp4",
+    "/assets/video/Redes_Sociales/Selz .mp4",
     "/assets/video/Redes_Sociales",
     // "assets/video/Redes_Sociales/",
   ].filter(Boolean);
