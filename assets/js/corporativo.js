@@ -4,13 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Videos corporativos (puedes cambiar rutas)
   const videosCorporativos = [
-    "assets/video/corportaivo/DOCUMENTAL.mp4",
-    "assets/video/corportaivo/LANZAMIENTO FOTON - V5 - HORIZONTAL.mp4",
-    "assets/video/corportaivo/Montana 1.mov",
-    "assets/video/corportaivo/Montana 2.mov",
-    "assets/video/corportaivo/Truck Fest .mov",
-    "assets/video/corportaivo/video (1).mp4",
-    "assets/video/corportaivo/YTDown.com_YouTube_MININA-El-Vecino_Media_ly1lcEUlr2Q_001_1080p.mp4",
+    "/assets/video/corportaivo/Minina.mp4",
     // "assets/video/corportaivo",
   ].filter(Boolean);
 
