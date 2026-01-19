@@ -8,7 +8,8 @@ document.addEventListener("DOMContentLoaded", function () {
     "/assets/video/corportaivo/Trident 1.mp4",
     "/assets/video/corportaivo/Truck Fest.mp4",
     "/assets/video/corportaivo/Andes Maq Evento .mp4",
-    "/assets/video/corportaivo/",
+    "/assets/video/corportaivo/EPYSA.mp4",
+    "/assets/video/corportaivo/Galaxi .mp4",
     // "assets/video/corportaivo",
   ].filter(Boolean);
 
