@@ -12,7 +12,11 @@ document.addEventListener("DOMContentLoaded", function () {
     "/assets/video/Redes_Sociales/Fai 1.mp4",
     "/assets/video/Redes_Sociales/Fai 2.mp4",
     "/assets/video/Redes_Sociales/Selz .mp4",
-    "/assets/video/Redes_Sociales",
+    "/assets/video/Redes_Sociales/selz 2.mp4",
+    "/assets/video/Redes_Sociales/Suerox .mp4",
+    "/assets/video/Redes_Sociales/Triden 3.mp4",
+    "/assets/video/Redes_Sociales/Trident RRSS.mp4",
+    "/assets/video/Redes_Sociales/Yincana Bon.mp4",
     // "assets/video/Redes_Sociales/",
   ].filter(Boolean);
 
