@@ -97,13 +97,16 @@ body {
 }
 
 .logo-marca {
-  font-family: "Outfit", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  background: var(--degradado-marca);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-decoration: none;
+  background-image: url("../img/logo.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 200px;
+  height: 60px;
+  font-size: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .lista-enlaces {
@@ -458,10 +461,22 @@ body {
   display: flex;
   overflow: hidden;
   /* Máscara para desvanecer bordes */
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 15%,
+    black 85%,
+    transparent
+  );
   border-radius: 20px;
-  
+
   /* Reset de interacción: Sin manito y con scroll fluido en móvil */
   cursor: default !important;
   touch-action: pan-y !important;
@@ -488,7 +503,9 @@ body {
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
   border: 1px solid transparent;
   -webkit-user-drag: none;
 }
@@ -512,13 +529,21 @@ body {
 
 /* KEYFRAMES */
 @keyframes scroll-izq {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes scroll-der {
-  from { transform: translateX(-50%); }
-  to { transform: translateX(0); }
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
 /* FIN MARCAS */
 
@@ -606,6 +631,12 @@ body {
 
   .logo-marca {
     font-size: 1.2rem !important;
+    font-size: 0;
+    width: 100%;
+    max-width: 200px;
+    display: block;
+    margin: 0 auto;
+    text-indent: -9999px;
   }
 
   .hero-bloque-texto h1 {
