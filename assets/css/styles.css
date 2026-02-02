@@ -14,9 +14,19 @@
   );
   --brand-whatsapp: #25d366;
   --brand-instagram: #e4405f;
+  /* Degradado oficial de Instagram */
+  --brand-instagram-gradient: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
   --brand-facebook: #1877f2;
   --brand-youtube: #ff0000;
   --brand-tiktok: #000000;
+  --brand-gmail: #ea4335;
 }
 
 * {
@@ -38,11 +48,11 @@ body {
 /* BOTÓN WHATSAPP FLOTANTE */
 .whatsapp-flotante {
   position: fixed;
-  bottom: 30px; /* Distancia desde abajo */
-  right: 30px; /* Distancia desde la derecha */
+  bottom: 30px;
+  right: 30px;
   width: 60px;
   height: 60px;
-  background-color: #25d366; /* Verde oficial de WhatsApp */
+  background-color: #25d366;
   color: #fff !important;
   border-radius: 50%;
   display: flex;
@@ -50,7 +60,7 @@ body {
   justify-content: center;
   font-size: 32px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-  z-index: 9999; /* Asegura que siempre esté al frente */
+  z-index: 9999;
   transition:
     transform 0.3s ease,
     background-color 0.3s ease;
@@ -58,12 +68,11 @@ body {
 }
 
 .whatsapp-flotante:hover {
-  transform: scale(1.1); /* Efecto de agrandado al pasar el mouse */
+  transform: scale(1.1);
   background-color: #1ebea5;
   color: white;
 }
 
-/* Ajuste para móviles */
 @media (max-width: 768px) {
   .whatsapp-flotante {
     bottom: 20px;
@@ -74,9 +83,7 @@ body {
   }
 }
 
-/* ==========================================================================
-   MENU - ADAPTACIÓN SMART ICONS
-   ========================================================================== */
+/* MENU */
 .menu-principal {
   position: fixed;
   top: 0;
@@ -126,7 +133,6 @@ body {
   gap: 8px;
 }
 
-/* Iconos ocultos en Escritorio */
 .lista-enlaces li a i {
   display: none;
 }
@@ -136,9 +142,7 @@ body {
   color: var(--color-cian);
 }
 
-/* ==========================================================================
-   HERO - VIDEO FONDO
-   ========================================================================== */
+/* HERO */
 .hero-bienvenida {
   position: relative;
   height: 100vh;
@@ -200,29 +204,24 @@ body {
   box-shadow: 0 15px 30px rgba(34, 211, 238, 0.3);
 }
 
-/* AJUSTE DE SEPARACIÓN ENTRE SECCIONES */
+/* SECCIONES */
 .seccion-que-hacemos,
 .seccion-estandar,
 .seccion-promociones {
   position: relative;
   z-index: 10;
   background: var(--color-fondo-oscuro) !important;
-
-  /* REDUCCIÓN DE ESPACIO */
-  padding: 60px 0; /* Bajamos de 100px a 60px (arriba y abajo) */
-  min-height: auto; /* Eliminamos el 100vh para que la sección no fuerce el alto total */
+  padding: 60px 0;
+  min-height: auto;
 }
 
-/* Ajuste específico para la primera sección después del Hero */
 .seccion-que-hacemos {
-  padding-top: 80px; /* Un poco más de aire solo arriba de la primera sección */
-  padding-bottom: 60px;
+  padding-top: 80px;
 }
 
-/* Ajuste de margen en los títulos para pegar más el contenido */
 .titulo-seccion {
   text-align: center;
-  margin-bottom: 30px; /* Reducimos el margen inferior del título si es necesario */
+  margin-bottom: 30px;
 }
 
 .etiqueta-pequena {
@@ -236,7 +235,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* QUÉ HACEMOS */
 .contenedor-manifiesto {
   max-width: 1000px;
   margin: 0 auto;
@@ -282,61 +280,17 @@ body {
   font-style: italic;
 }
 
-/* COLUMNA VIDEO */
-.columna-video-corp {
-  width: 100%;
-  overflow: hidden;
-}
-
-.columna-video-corp video {
-  width: 100%;
-  height: 100%; /* Ocupa todo el alto de la columna de texto */
-  object-fit: cover; /* No se deforma, se recorta para llenar el espacio */
-  display: block;
-}
-
-/* COLUMNA TEXTO */
-.columna-texto-corp {
-  padding: 60px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.columna-texto-corp p {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  margin-bottom: 30px;
-  max-width: 450px;
-}
-
-/* AJUSTE MÓVIL */
-@media (max-width: 850px) {
-  .grid-corporativo-nivelado {
-    grid-template-columns: 1fr; /* Se apilan en móvil */
-  }
-
-  .columna-video-corp {
-    height: 350px; /* Altura fija para que el video luzca bien en móvil */
-  }
-}
-
-/* ==========================================================================
-   ESTILOS SECCIÓN STOP MOTION
-   ========================================================================== */
-
+/* STOP MOTION */
 .grid-stop-motion {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   width: 100%;
 }
 
 .video-card-sm {
   width: 100%;
-  aspect-ratio: 9 / 16; /* Formato vertical tipo Reel */
+  aspect-ratio: 9 / 16;
   background: rgba(15, 23, 42, 0.4);
   border-radius: 20px;
   overflow: hidden;
@@ -353,37 +307,15 @@ body {
 .video-card-sm video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Llena el contenedor sin deformarse */
+  object-fit: cover;
 }
 
-/* --- AJUSTE PARA TABLET Y MÓVIL --- */
-@media (max-width: 992px) {
-  .grid-stop-motion {
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
-  }
-}
-
-@media (max-width: 600px) {
-  .grid-stop-motion {
-    grid-template-columns: 1fr; /* 1 columna en móvil */
-    gap: 20px;
-  }
-
-  .video-card-sm {
-    max-width: 320px; /* Evita que el video se estire demasiado en móvil */
-    margin: 0 auto;
-  }
-}
-
-/* ==========================================================================
-   ESTILOS CORPORATIVO (ALTURAS IGUALADAS Y TÍTULO CENTRADO)
-   ========================================================================== */
-
+/* CORPORATIVO NIVELADO */
 .grid-corporativo-nivelado {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Dos columnas iguales */
-  gap: 0; /* Sin espacio para que se unan perfectamente, o añade gap si prefieres separación */
-  align-items: stretch; /* ESTO asegura que midan lo mismo de alto */
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -391,22 +323,24 @@ body {
 }
 
 .columna-video-corp {
-  line-height: 0; /* Elimina espacios residuales debajo del video */
+  line-height: 0;
+  width: 100%;
+  overflow: hidden;
 }
-
 .columna-video-corp video {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Importante para que el video llene su mitad */
+  object-fit: cover;
+  display: block;
 }
 
 .columna-texto-corp {
-  background: rgba(30, 41, 59, 0.8); /* Fondo para resaltar el área de texto */
+  background: rgba(30, 41, 59, 0.8);
   padding: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Centra el texto verticalmente dentro de su alto */
-  align-items: center; /* Centra el texto horizontalmente */
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
@@ -419,49 +353,19 @@ body {
   max-width: 400px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 850px) {
-  .grid-corporativo-nivelado {
-    grid-template-columns: 1fr; /* En móvil una columna sobre otra */
-  }
-
-  .columna-texto-corp {
-    padding: 30px 20px;
-  }
-
-  .columna-video-corp {
-    aspect-ratio: 16 / 9; /* En móvil el video mantiene forma clásica */
-  }
-}
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  .grid-corporativo {
-    grid-template-columns: 1fr; /* Una columna en móvil */
-  }
-
-  .video-item-corp {
-    max-width: 450px;
-    margin: 0 auto;
-  }
-}
-
-/* ==========================================================================
-   MARQUESINAS OPTIMIZADAS (ESTILO FINAL)
-   ========================================================================== */
-
+/* MARQUESINAS */
 .contenedor-marquesina {
   display: flex;
   flex-direction: column;
   gap: 30px;
   overflow: hidden;
   padding: 40px 0;
-  width: 100%; /* Asegura que ocupe todo el ancho para centrar contenido */
+  width: 100%;
 }
 
 .marquesina-wrapper {
   display: flex;
   overflow: hidden;
-  /* Máscara para desvanecer bordes */
   mask-image: linear-gradient(
     to right,
     transparent,
@@ -477,11 +381,6 @@ body {
     transparent
   );
   border-radius: 20px;
-
-  /* Reset de interacción: Sin manito y con scroll fluido en móvil */
-  cursor: default !important;
-  touch-action: pan-y !important;
-  user-select: none;
 }
 
 .marquesina-track {
@@ -490,12 +389,7 @@ body {
   flex-shrink: 0;
   animation: scroll-izq 20s linear infinite;
   padding: 10px 0;
-  will-change: transform; /* Optimización de rendimiento */
-  /* Eliminamos transition: transform para evitar saltos con la animación */
-}
-
-.marquesina-wrapper.reverse .marquesina-track {
-  animation: scroll-der 20s linear infinite;
+  will-change: transform;
 }
 
 .marquesina-item {
@@ -504,31 +398,21 @@ body {
   flex-shrink: 0;
   border-radius: 20px;
   overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease;
+  transition: 0.3s ease;
   border: 1px solid transparent;
-  -webkit-user-drag: none;
 }
 
 .marquesina-item:hover {
   transform: scale(1.05);
   border-color: var(--color-cian);
 }
-
 .marquesina-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Cambiado a cover para que se vea nivelado y profesional */
-  transition: transform 0.5s ease;
+  object-fit: contain;
   pointer-events: none;
 }
 
-.marquesina-item:hover img {
-  transform: scale(1.1);
-}
-
-/* KEYFRAMES */
 @keyframes scroll-izq {
   from {
     transform: translateX(0);
@@ -538,17 +422,7 @@ body {
   }
 }
 
-@keyframes scroll-der {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-/* FIN MARCAS */
-
-/* FOOTER */
+/* FOOTER & REDES SOCIALES */
 .pie-pagina {
   position: relative;
   z-index: 50;
@@ -556,6 +430,15 @@ body {
   padding: 80px 20px 60px;
   text-align: center;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.barra-redes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  width: 100%;
 }
 
 .icono-red {
@@ -571,114 +454,74 @@ body {
   font-size: 1.6rem;
 }
 
+/* Modificación específica para Instagram con Degradado */
 .icono-red.instagram {
-  background-color: var(--brand-instagram);
+  background: var(--brand-instagram-gradient);
 }
+
 .icono-red.whatsapp {
   background-color: var(--brand-whatsapp);
 }
-/* CENTRADO DE REDES EN EL FOOTER */
-.barra-redes {
-  display: flex; /* Activa el modo flexible */
-  justify-content: center; /* Centra horizontalmente los iconos */
-  align-items: center; /* Centra verticalmente */
-  gap: 1.5rem; /* Espacio entre los iconos */
-  margin: 2rem 0; /* Espacio arriba y abajo del bloque */
-  width: 100%; /* Asegura que use todo el ancho para poder centrar */
+.icono-red.gmail {
+  background-color: var(--brand-gmail);
 }
 
-/* Ajuste específico para móvil para que se mantengan centrados y bien espaciados */
-@media (max-width: 768px) {
-  .barra-redes {
-    justify-content: center !important; /* Refuerza el centrado en móvil */
-    gap: 1.2rem; /* Espacio un poco más pequeño en móviles */
-    margin: 1.5rem 0;
+.icono-red:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .grid-stop-motion {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* ==========================================================================
-   RESPONSIVE (CORREGIDO PARA NO ROMPER)
-   ========================================================================== */
+@media (max-width: 850px) {
+  .grid-corporativo-nivelado {
+    grid-template-columns: 1fr;
+  }
+  .columna-video-corp {
+    aspect-ratio: 16 / 9;
+  }
+}
 
-/* 📱 MOBILE & TABLET (Hasta 768px) */
 @media (max-width: 768px) {
-  /* Cambio crítico: Ya no ocultamos la lista, la adaptamos */
-  .lista-enlaces {
-    display: flex !important;
-    gap: 1.2rem !important;
-  }
-
-  /* Ocultamos ítems secundarios y el texto */
-  .nav-hacemos,
-  .nav-marcas,
-  .lista-enlaces li a span {
-    display: none !important;
-  }
-
-  /* Mostramos iconos */
   .lista-enlaces li a i {
     display: inline-block !important;
     font-size: 1.4rem;
     color: white;
   }
-
-  .lista-enlaces li a.active i {
-    color: var(--color-cian);
+  .nav-hacemos,
+  .nav-marcas,
+  .lista-enlaces li a span {
+    display: none !important;
   }
-
-  .contenedor-navegacion {
-    padding: 1rem 5%;
-  }
-
-  .logo-marca {
-    font-size: 1.2rem !important;
-    font-size: 0;
-    width: 100%;
-    max-width: 200px;
-    display: block;
-    margin: 0 auto;
-    text-indent: -9999px;
-  }
-
   .hero-bloque-texto h1 {
     font-size: 2.5rem !important;
   }
-  .grid-sub-bloque {
-    grid-template-columns: 1fr !important;
-  }
-  .caja-video-vertical img {
-    height: 350px !important;
-  }
-}
-
-/* 📱 MOBILE EXTRA (Hasta 480px) */
-@media (max-width: 480px) {
-  .whatsapp-flotante {
-    width: 55px;
-    height: 55px;
-    bottom: 20px;
-    right: 20px;
+  .barra-redes {
+    gap: 1.2rem;
   }
   .icono-red {
-    width: 55px !important;
-    height: 55px !important;
-    font-size: 1.3rem !important;
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
   }
 }
 
-/* 🎯 ANCHO 100% */
+@media (max-width: 600px) {
+  .grid-stop-motion {
+    grid-template-columns: 1fr;
+  }
+}
+
 .seccion-estandar,
 .seccion-que-hacemos,
-.seccion-promociones,
 .hero-bienvenida {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-}
-@media (max-width: 768px) {
-  .seccion-que-hacemos,
-  .seccion-estandar,
-  .seccion-promociones {
-    padding: 40px 0; /* Espacio aún más compacto en pantallas pequeñas */
-  }
 }
