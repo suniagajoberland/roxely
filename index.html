@@ -4,13 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>UPPER CREATORS | agencia audiovisual</title>
+    <title>
+      Upper Creators | Agencia de marketing digital y producción audiovisual en
+      Santiago
+    </title>
     <meta
       name="description"
-      content="Edición cinematográfica de alto impacto."
+      content="Agencia de marketing digital y producción audiovisual en Santiago. Creamos contenido para redes sociales, videos corporativos, fotografía, diseño gráfico y relaciones públicas para marcas en Chile."
+    />
+    <meta
+      name="keywords"
+      content="agencia de marketing digital, producción audiovisual, contenido para redes sociales, videos corporativos, fotografía comercial, diseño gráfico, relaciones públicas, Santiago, Chile"
     />
     <meta name="author" content="UPPER CREATORS" />
-
+    <link rel="canonical" href="https://uppercreators.com/" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Upper Creators | Agencia de marketing digital y producción audiovisual en Santiago"
+    />
+    <meta
+      property="og:description"
+      content="Creamos contenido, videos y diseño para marcas y emprendimientos que quieren conectar de verdad con sus clientes. Santiago, Chile."
+    />
+    <meta property="og:url" content="https://uppercreators.com/" />
+    <meta
+      property="og:image"
+      content="https://uppercreators.com/assets/img/hero-poster.jpg"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "Upper Creators",
+        "description": "Agencia de marketing digital y producción audiovisual en Santiago. Contenido para redes sociales, videos, fotografía, diseño gráfico y relaciones públicas.",
+        "url": "https://uppercreators.com/",
+        "email": "hola@uppercreators.com",
+        "telephone": "+56942709831",
+        "areaServed": ["Santiago", "Región Metropolitana", "Chile"],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Santiago",
+          "addressRegion": "Región Metropolitana",
+          "addressCountry": "CL"
+        },
+        "sameAs": [
+          "https://www.instagram.com/uppercreators",
+          "https://wa.me/56942709831"
+        ]
+      }
+    </script>
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.png"
+      type="image/x-icon"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
       rel="stylesheet"
@@ -24,6 +72,7 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
@@ -32,25 +81,47 @@
   </head>
 
   <body>
-   <a
-  href="https://wa.me/56942709831?text=Hola, llegu%C3%A9%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes%20y%20generar%20contenido%20que%20conecte%20con%20mi%20audiencia."
-  class="whatsapp-flotante"
-  target="_blank"
->
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-  <i class="fab fa-whatsapp"></i></a>
+    <a
+      href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes%20y%20generar%20contenido%20que%20conecte%20con%20mi%20audiencia."
+      class="whatsapp-flotante"
+      target="_blank"
+      rel="noopener"
+    >
+      <i class="fab fa-whatsapp"></i>
+    </a>
 
     <header class="menu-principal">
       <nav class="contenedor-navegacion">
-        <a href="#inicio" class="logo-marca">UPPER CREATORS</a>
+        <a href="index.html" class="logo-marca">UPPER CREATORS</a>
         <ul class="lista-enlaces">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#que-hacemos">Qué Hacemos</a></li>
-          <li><a href="#galeria">Redes Sociales</a></li>
-          <li><a href="#promociones">Corporativo</a></li>
-          <li><a href="#marcas">Marcas</a></li>
+          <li class="nav-inicio">
+            <a href="index.html">
+              <i class="fas fa-home"></i>
+              <span>Inicio</span>
+            </a>
+          </li>
+          <li class="nav-hacemos">
+            <a href="#que-hacemos">
+              <span>Qué Hacemos</span>
+            </a>
+          </li>
+          <li class="nav-redes">
+            <a href="galeria.html">
+              <i class="fas fa-camera-retro"></i>
+              <span>Redes Sociales</span>
+            </a>
+          </li>
+          <li class="nav-corp">
+            <a href="corporativo.html">
+              <i class="fas fa-briefcase"></i>
+              <span>Corporativo</span>
+            </a>
+          </li>
+          <li class="nav-marcas">
+            <a href="#marcas">
+              <span>Marcas</span>
+            </a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -59,32 +130,126 @@
       <!-- 1️⃣ INICIO (Hero) -->
       <section class="hero-bienvenida" id="inicio">
         <div class="contenedor-video-fixed">
-          <video class="video-fondo" autoplay muted loop playsinline>
-            <source src="assets/video/Video_final.mov" type="video/mp4" />
+          <video
+            class="video-fondo"
+            autoplay
+            muted
+            loop
+            playsinline
+            webkit-playsinline
+            preload="auto"
+            poster="assets/img/hero-poster.jpg"
+            disablepictureinpicture
+            aria-hidden="true"
+          >
+            <source src="assets/video/Video_final.mp4" type="video/mp4" />
+            <source src="assets/video/Video_final.mov" type="video/quicktime" />
           </video>
         </div>
         <div class="hero-bloque-texto" data-aos="fade-up">
           <span class="etiqueta-pequena">UPPER CREATORS</span>
-          <h1>Visuales que obligan <br />a detener el scroll.</h1>
-          <a href="#galeria" class="boton-llamada-accion">Ver Galería</a>
+          <h1>
+            Agencia de marketing digital y
+            <br />producción audiovisual en Santiago
+          </h1>
+          <p class="hero-texto">
+            Creamos contenido, videos y diseño para marcas y emprendimientos que
+            quieren dejar de pasar desapercibidos y empezar a conectar de verdad
+            con sus clientes.
+          </p>
+          <a href="galeria.html" class="boton-llamada-accion">Ver Portafolio</a>
         </div>
       </section>
 
+      <!-- SOMOS UPPER CREATORS -->
+      <section class="seccion-estandar" id="somos-upper-creators">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span class="etiqueta-pequena">Sobre nosotros</span>
+          <h2 class="titulo-seccion">Somos Upper Creators</h2>
+          <p class="texto-principal-hacemos">
+            Somos una agencia enfocada en la creación de contenido para redes
+            sociales y marketing digital. Creemos que cada marca tiene algo que
+            contar. Por eso, antes de grabar, diseñar o publicar, nos tomamos el
+            tiempo de entender quién eres, qué quieres lograr y a quién quieres
+            llegar.
+          </p>
+          <p class="texto-cuerpo">
+            Unimos estrategia de contenidos, redes sociales, producción
+            audiovisual y diseño gráfico para que tu marca se vea coherente,
+            atractiva y profesional en todos lados. Combinamos creatividad,
+            planificación y producción para crear contenido que de verdad
+            conecte con tu gente, no solo que se vea bonito.
+          </p>
+          <p class="texto-cuerpo">
+            Estamos en Santiago, trabajamos en toda la Región Metropolitana y
+            acompañamos proyectos en todas las regiones de Chile. Trabajamos en
+            proyectos puntuales y también acompañamos a marcas mes a mes con
+            contenido continuo.
+          </p>
+        </div>
+      </section>
+
+      <!--QUE HACEMOS-->
       <section class="seccion-que-hacemos" id="que-hacemos">
         <div class="contenedor-manifiesto" data-aos="fade-up">
           <span class="etiqueta-pequena">Estrategia & Creatividad</span>
-          <h2
-            class="titulo-seccion"
-            style="text-align: left; margin-bottom: 30px"
-          >
-            QUÉ HACEMOS
-          </h2>
+          <h2 class="titulo-seccion">Qué hacemos</h2>
 
           <p class="texto-principal-hacemos">
-            Creamos ideas, estrategias y contenido audiovisual pensado para
-            funcionar en redes sociales y eventos. No solo producimos videos:
-            desarrollamos conceptos que generan comunidad e interacción.
+            Hacemos que tu marca se vea, se entienda y se recuerde. Estos son los
+            servicios con los que lo logramos:
           </p>
+
+          <div class="grid-servicios">
+            <article class="tarjeta-servicio" data-aos="fade-up">
+              <span class="numero-servicio">01</span>
+              <h3>Marketing digital y gestión de redes sociales</h3>
+              <p>
+                Creamos el contenido que tu cliente está buscando en redes
+                sociales y en Google. Pensamos qué publicar, lo grabamos, lo
+                diseñamos y lo publicamos por ti. Nos encargamos de la
+                planificación, creación de contenido, gestión de comunidad y
+                seguimiento, para que tus redes se mantengan activas y con
+                sentido.
+              </p>
+            </article>
+
+            <article class="tarjeta-servicio" data-aos="fade-up">
+              <span class="numero-servicio">02</span>
+              <h3>Producción audiovisual y fotografía</h3>
+              <p>
+                Hacemos videos y fotos que hacen que la gente se detenga a mirar
+                y quiera saber más de tu marca. Videos corporativos, contenido
+                para redes sociales, videos promocionales, entrevistas,
+                testimonios, videoclips, fotografía publicitaria y comercial, y
+                cobertura de eventos y activaciones en Santiago.
+              </p>
+            </article>
+
+            <article class="tarjeta-servicio" data-aos="fade-up">
+              <span class="numero-servicio">03</span>
+              <h3>Diseño gráfico e identidad visual</h3>
+              <p>
+                Hacemos que tu marca se vea profesional y se reconozca a primera
+                vista. Creamos logotipos, identidad visual, piezas publicitarias,
+                flyers, material promocional, diseños para redes sociales,
+                catálogos, presentaciones, etiquetas, packaging y otros recursos
+                gráficos que representan la personalidad de tu marca.
+              </p>
+            </article>
+
+            <article class="tarjeta-servicio" data-aos="fade-up">
+              <span class="numero-servicio">04</span>
+              <h3>Comunicación y relaciones públicas</h3>
+              <p>
+                Hacemos que hablen de tu marca, con una historia que valga la
+                pena contar. Te ayudamos con comunicados de prensa, coordinación
+                de entrevistas, gestión de contactos con medios y apoyo en
+                acciones de difusión, para que tu marca gane visibilidad en
+                Santiago y en otros medios.
+              </p>
+            </article>
+          </div>
 
           <div class="grid-sub-bloque">
             <div class="sub-texto">
@@ -105,159 +270,142 @@
       </section>
 
       <!-- 2️⃣ GALERÍA -->
-      <section class="seccion-estandar" id="galeria">
-        <span class="etiqueta-pequena">Portafolio Dinámico</span>
-        <h2 class="titulo-seccion">Redes Sociales</h2>
-        <div class="contenedor-marquesina">
-          <div class="marquesina-wrapper" data-marquee="galeria-izq">
-            <div class="marquesina-track">
-              <div class="marquesina-item">
-                <img
-                  src="./assets/video/Montana_3.mov"
-                  alt="Montana"
+      <section class="seccion-estandar" id="redes-sociales">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span
+            class="etiqueta-pequena"
+            style="display: block; text-align: center"
+            >Portafolio Dinámico</span
+          >
+          <h2
+            class="titulo-seccion"
+            style="text-align: center; margin-bottom: 50px"
+          >
+            REDES SOCIALES
+          </h2>
+
+          <div class="grid-corporativo-nivelado">
+            <div class="columna-video-corp" data-aos="fade-right">
+              <video loop muted playsinline preload="metadata">
+                <source
+                  src="./assets/video/Redes_Sociales/Alto Japón 2.mp4"
+                  type="video/mp4"
                 />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=2"
-                  alt="Proyecto 2"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=3"
-                  alt="Proyecto 3"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=4"
-                  alt="Proyecto 4"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=5"
-                  alt="Proyecto 5"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=6"
-                  alt="Proyecto 6"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=7"
-                  alt="Proyecto 7"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=8"
-                  alt="Proyecto 8"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=9"
-                  alt="Proyecto 9"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=10"
-                  alt="Proyecto 10"
-                />
-              </div>
-              <!-- Duplicados para loop perfecto -->
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=1"
-                  alt="Proyecto 1"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=2"
-                  alt="Proyecto 2"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=3"
-                  alt="Proyecto 3"
-                />
-              </div>
+              </video>
             </div>
-          </div>
-          <div class="marquesina-wrapper reverse" data-marquee="galeria-der">
-            <div class="marquesina-track">
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=11"
-                  alt="Proyecto 11"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=12"
-                  alt="Proyecto 12"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=13"
-                  alt="Proyecto 13"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=14"
-                  alt="Proyecto 14"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=15"
-                  alt="Proyecto 15"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=16"
-                  alt="Proyecto 16"
-                />
-              </div>
-              <!-- Duplicados para loop perfecto -->
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=11"
-                  alt="Proyecto 11"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="https://picsum.photos/600/400?random=12"
-                  alt="Proyecto 12"
-                />
-              </div>
+
+            <div class="columna-texto-corp" data-aos="fade-left">
+              <p>
+                Creamos contenido de alto impacto diseñado para captar atención
+                inmediata, generar comunidad y convertir el scroll en
+                interacción real.
+              </p>
+              <a href="galeria.html" class="boton-llamada-accion"
+                >Ver Portafolio</a
+              >
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3️⃣ PROMOCIONES -->
-      <section class="seccion-promociones" id="promociones">
-        <div class="contenedor-video-unico" data-aos="fade-up">
-          <span class="etiqueta-pequena">Campañas</span>
-          <h2 class="titulo-seccion">Videos Corporativos</h2>
+      <!--STOP MOTION-->
+      <section class="seccion-estandar" id="stop-motion">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span
+            class="etiqueta-pequena"
+            style="display: block; text-align: center"
+            >Creatividad Cuadro a Cuadro</span
+          >
+          <h2
+            class="titulo-seccion"
+            style="text-align: center; margin-bottom: 20px"
+          >
+            STOP MOTION
+          </h2>
 
-          <div class="caja-video-vertical">
-            <video autoplay loop muted playsinline preload="metadata">
-              <source src="assets/video/Video_final.mov" type="video/mp4" />
-            </video>
+          <p
+            class="texto-principal-hacemos"
+            style="
+              text-align: center;
+              margin-bottom: 50px;
+              max-width: 800px;
+              margin-left: auto;
+              margin-right: auto;
+              font-weight: 300;
+            "
+          >
+            Creamos piezas en <strong>stop motion</strong> para comunicar ideas
+            de forma creativa, dinámica y altamente memorable.
+          </p>
+
+          <div class="grid-stop-motion">
+            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="100">
+              <video loop muted playsinline preload="metadata">
+                <source
+                  src="assets/video/motion/Paz casa.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="200">
+              <video loop muted playsinline preload="metadata">
+                <source
+                  src="assets/video//motion/Bon O Bon Stop Motion.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="300">
+              <video loop muted playsinline preload="metadata">
+                <source
+                  src="assets/video/motion/Fai Stop Motion.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3️⃣ CORPORATIVO -->
+      <section class="seccion-estandar" id="corporativo">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span
+            class="etiqueta-pequena"
+            style="display: block; text-align: center"
+            >Profesionalismo & Impacto</span
+          >
+          <h2
+            class="titulo-seccion"
+            style="text-align: center; margin-bottom: 50px"
+          >
+            VIDEOS CORPORATIVOS
+          </h2>
+
+          <div class="grid-corporativo-nivelado">
+            <div class="columna-video-corp" data-aos="fade-right">
+              <video loop muted playsinline preload="metadata">
+                <source
+                  src="assets/video/corportaivo/Audax.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+
+            <div class="columna-texto-corp" data-aos="fade-left">
+              <p>
+                Desarrollamos videos claros y bien producidos para marcas,
+                empresas y eventos que necesitan comunicar de forma profesional.
+              </p>
+              <a
+                href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes."
+                class="boton-llamada-accion"
+                target="_blank"
+                >Cotizar Proyecto</a
+              >
+            </div>
           </div>
         </div>
       </section>
@@ -265,7 +413,7 @@
       <!-- 4️⃣ MARCAS -->
       <section class="seccion-estandar" id="marcas">
         <span class="etiqueta-pequena">Clientes Destacados</span>
-        <h2 class="titulo-seccion">Marcas Trabajadas</h2>
+        <h2 class="titulo-seccion">MARCAS TRABAJADAS</h2>
         <div class="contenedor-marquesina">
           <div class="marquesina-wrapper" data-marquee="galeria-izq">
             <div class="marquesina-track">
@@ -305,7 +453,6 @@
               <div class="marquesina-item">
                 <img src="./assets/img/Subway.logo.8.5.svg.png" alt="Subway" />
               </div>
-              <!-- Duplicados para loop perfecto -->
               <div class="marquesina-item">
                 <img src="./assets/img/Suerox.png" alt="Suerox" />
               </div>
@@ -328,7 +475,6 @@
               <div class="marquesina-item">
                 <img src="./assets/img/Bon O Bon.png" alt="bonobon" />
               </div>
-              <!-- Duplicados para loop perfecto -->
               <div class="marquesina-item">
                 <img src="./assets/img/Suerox.png" alt="Suerox" />
               </div>
@@ -349,62 +495,183 @@
               </div>
             </div>
           </div>
-          <div class="marquesina-wrapper" data-marquee="galeria-izq">
-            <div class="marquesina-track">
-              <div class="marquesina-item">
-                <img src="./assets/img/Bon O Bon.png" alt="bonobon" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/EPYSA.png" alt="EPYSA" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/IVECO.png" alt="IVECO" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Logo-CHURU.png" alt="CHURU" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/LOGO-IDEAL-1-scaled.png" alt="IDEAL" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/logo-Lego.png" alt="Lego" />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="./assets/img/LOGO-NEGRO-HORIZONTAL-2024.png"
-                  alt="HORIZONTAL"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img
-                  src="./assets/img/Logo_Faber-Castell.svg.png"
-                  alt="Logo_Faber-Castell"
-                />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Pokemon go.png" alt="Pokemon" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Subway.logo.8.5.svg.png" alt="Subway" />
-              </div>
-              <!-- Duplicados para loop perfecto -->
-              <div class="marquesina-item">
-                <img src="./assets/img/Suerox.png" alt="Suerox" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Takis_29 (1).png" alt="Takis_29" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Trendy.png" alt="Trendy" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Trident-208-logo.png" alt="Trident" />
-              </div>
-              <div class="marquesina-item">
-                <img src="./assets/img/Sushi La Reina.png" alt="Sushi" />
-              </div>
-            </div>
+        </div>
+      </section>
+
+      <!-- POR QUÉ UPPER CREATORS -->
+      <section class="seccion-estandar" id="por-que-upper-creators">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span class="etiqueta-pequena">Diferenciadores</span>
+          <h2 class="titulo-seccion">
+            ¿Por qué trabajar con Upper Creators?
+          </h2>
+          <p class="texto-principal-hacemos">
+            Porque comunicar una marca va más allá de publicar imágenes o crear
+            videos. Nos involucramos en cada proyecto para que lo que publiques
+            tenga sentido para tu negocio y se vea coherente con tu marca.
+          </p>
+          <div class="grid-beneficios">
+            <article class="tarjeta-beneficio" data-aos="fade-up">
+              <h3>Creatividad con propósito</h3>
+              <p>
+                Cada propuesta se piensa desde los objetivos y las necesidades de
+                comunicación de tu marca.
+              </p>
+            </article>
+            <article class="tarjeta-beneficio" data-aos="fade-up">
+              <h3>Todo en un solo lugar</h3>
+              <p>
+                Contenido, video, foto, diseño y comunicación. No tienes que
+                coordinar a cuatro proveedores distintos, lo resolvemos
+                nosotros.
+              </p>
+            </article>
+            <article class="tarjeta-beneficio" data-aos="fade-up">
+              <h3>Trabajo en conjunto</h3>
+              <p>
+                Mantienes comunicación directa con nosotros en cada etapa del
+                trabajo. Sabes en qué va tu proyecto.
+              </p>
+            </article>
+            <article class="tarjeta-beneficio" data-aos="fade-up">
+              <h3>Compromiso con la calidad</h3>
+              <p>
+                Cuidamos cada detalle, desde la planificación hasta la entrega
+                final, porque tu marca se juega su imagen en cada publicación.
+              </p>
+            </article>
           </div>
+        </div>
+      </section>
+
+      <!-- CÓMO TRABAJAMOS -->
+      <section class="seccion-estandar" id="como-trabajamos">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span class="etiqueta-pequena">Proceso de trabajo</span>
+          <h2 class="titulo-seccion">Cómo trabajamos</h2>
+          <p class="texto-principal-hacemos">
+            Cada proyecto es distinto. Por eso, antes de crear, nos preocupamos
+            de entender qué necesita comunicar tu marca y qué esperas conseguir.
+          </p>
+          <div class="grid-proceso">
+            <article class="paso-proceso" data-aos="fade-up">
+              <span class="numero-servicio">01</span>
+              <h3>Conocemos tu proyecto</h3>
+              <p>
+                Escuchamos tus ideas, identificamos tus necesidades y definimos
+                los objetivos de tu marca.
+              </p>
+            </article>
+            <article class="paso-proceso" data-aos="fade-up">
+              <span class="numero-servicio">02</span>
+              <h3>Planificamos la propuesta</h3>
+              <p>
+                Definimos el enfoque creativo, los servicios necesarios y el plan
+                de trabajo para desarrollar el proyecto con claridad desde el
+                inicio.
+              </p>
+            </article>
+            <article class="paso-proceso" data-aos="fade-up">
+              <span class="numero-servicio">03</span>
+              <h3>Desarrollamos el proyecto</h3>
+              <p>
+                Nuestro equipo trabaja en la producción de los contenidos,
+                diseños y piezas acordados, manteniéndote informado durante el
+                proceso.
+              </p>
+            </article>
+            <article class="paso-proceso" data-aos="fade-up">
+              <span class="numero-servicio">04</span>
+              <h3>Revisamos y entregamos</h3>
+              <p>
+                Presentamos los resultados, realizamos los ajustes necesarios y
+                entregamos el material final. En proyectos continuos mantenemos
+                el seguimiento y la coordinación para que la comunicación de tu
+                marca no se detenga.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREGUNTAS FRECUENTES -->
+      <section class="seccion-estandar" id="preguntas-frecuentes">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <span class="etiqueta-pequena">Dudas comunes</span>
+          <h2 class="titulo-seccion">Preguntas frecuentes</h2>
+          <div class="lista-faq">
+            <details class="faq-item">
+              <summary><h3>¿Qué servicios ofrece Upper Creators?</h3></summary>
+              <p>
+                Acompañamos a tu marca en toda su comunicación, desde la
+                estrategia hasta la publicación: contenido y redes sociales,
+                producción audiovisual, fotografía publicitaria y comercial,
+                diseño gráfico e identidad visual, y comunicación y relaciones
+                públicas.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <h3>¿Puedo contratar un servicio por separado?</h3>
+              </summary>
+              <p>
+                Sí. Puedes contratar un servicio específico o combinar distintos
+                servicios según las necesidades de tu marca.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <h3>¿Trabajan con planes mensuales de contenido?</h3>
+              </summary>
+              <p>
+                Sí. Podemos desarrollar propuestas de trabajo continuo para
+                marcas que necesitan planificación, creación y publicación
+                periódica de contenido.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>
+                <h3>¿Trabajan con empresas y emprendimientos?</h3>
+              </summary>
+              <p>
+                Sí. Desarrollamos proyectos para empresas, emprendimientos,
+                profesionales y organizaciones de distintos rubros.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary><h3>¿En qué zonas trabajan?</h3></summary>
+              <p>
+                Estamos ubicados en Santiago y trabajamos principalmente en la
+                Región Metropolitana. También desarrollamos proyectos en otras
+                regiones de Chile.
+              </p>
+            </details>
+            <details class="faq-item">
+              <summary>¿Cómo puedo solicitar una cotización?</summary>
+              <p>
+                Puedes contactarnos directamente por WhatsApp o por correo a
+                hola@uppercreators.com. Cuéntanos sobre tu proyecto, qué
+                servicios necesitas y cuáles son tus objetivos. Nuestro equipo te
+                orientará para desarrollar una propuesta acorde a tus
+                necesidades.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA FINAL -->
+      <section class="seccion-cta-final" id="cotizar">
+        <div class="contenedor-manifiesto" data-aos="fade-up">
+          <h2>Hagamos que tu marca conecte con tus clientes</h2>
+          <p>
+            Tu marca tiene una historia que contar. Nosotros te ayudamos a
+            comunicarla. Conversemos sobre tu proyecto y encontremos juntos la
+            mejor manera de darle forma.
+          </p>
+          <a href="mailto:hola@uppercreators.com" class="boton-llamada-accion"
+            >Solicitar una cotización</a
+          >
         </div>
       </section>
     </main>
@@ -415,21 +682,27 @@
           href="https://www.instagram.com/uppercreators?igsh=MXh3aWYyOXBwcHo5Zg%3D%3D&utm_source=qr"
           class="icono-red instagram"
           target="_blank"
-          ><i class="fab fa-instagram"></i
-        ></a>
+          rel="noopener"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
         <a
-          href="https://wa.me/56942709831?text=Hola, llegu%C3%A9%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes%20y%20generar%20contenido%20que%20conecte%20con%20mi%20audiencia."
+          href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes."
           class="icono-red whatsapp"
           target="_blank"
-          ><i class="fab fa-whatsapp"></i
-        ></a>
-        <!--<a href="#" class="icono-red facebook" target="_blank"
-          ><i class="fab fa-facebook-f"></i
-        ></a>
-        <a href="#" class="icono-red youtube" target="_blank"
-          ><i class="fab fa-youtube"></i
-        ></a>-->
+          rel="noopener"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a
+          href="mailto:hola@uppercreators.com"
+          class="icono-red correo"
+          aria-label="Escribir a hola@uppercreators.com"
+        >
+          <i class="fas fa-envelope"></i>
+        </a>
       </div>
+
       <p style="opacity: 0.5; font-size: 0.8rem">
         © 2026 UPPER CREATORS. Todos los derechos reservados.
       </p>
