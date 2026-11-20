@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-CL">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,8 +17,12 @@
       content="agencia de marketing digital, producción audiovisual, contenido para redes sociales, videos corporativos, fotografía comercial, diseño gráfico, relaciones públicas, Santiago, Chile"
     />
     <meta name="author" content="UPPER CREATORS" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#0f172a" />
     <link rel="canonical" href="https://uppercreators.com/" />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="Upper Creators" />
     <meta
       property="og:title"
       content="Upper Creators | Agencia de marketing digital y producción audiovisual en Santiago"
@@ -32,6 +36,19 @@
       property="og:image"
       content="https://uppercreators.com/assets/img/hero-poster.jpg"
     />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Upper Creators | Agencia de marketing digital y producción audiovisual en Santiago"
+    />
+    <meta
+      name="twitter:description"
+      content="Creamos contenido, videos y diseño para marcas y emprendimientos que quieren conectar de verdad con sus clientes. Santiago, Chile."
+    />
+    <meta
+      name="twitter:image"
+      content="https://uppercreators.com/assets/img/hero-poster.jpg"
+    />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,7 +56,7 @@
         "name": "Upper Creators",
         "description": "Agencia de marketing digital y producción audiovisual en Santiago. Contenido para redes sociales, videos, fotografía, diseño gráfico y relaciones públicas.",
         "url": "https://uppercreators.com/",
-        "email": "hola@uppercreators.com",
+        "email": "Rroman@uppercreators.com",
         "telephone": "+56942709831",
         "areaServed": ["Santiago", "Región Metropolitana", "Chile"],
         "address": {
@@ -60,7 +77,7 @@
       type="image/x-icon"
     />
     <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap"
       rel="stylesheet"
     />
     <link
@@ -82,7 +99,7 @@
 
   <body>
     <a
-      href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes%20y%20generar%20contenido%20que%20conecte%20con%20mi%20audiencia."
+      href="https://wa.me/56942709831?text=Hola%20Upper%20Creators%2C%20llegu%C3%A9%20desde%20la%20web%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n.%0A%0ANombre%3A%0AEmpresa%3A%0AServicio%20de%20inter%C3%A9s%3A%0ACont%C3%A1ctome%20al%20correo%20Rroman%40uppercreators.com"
       class="whatsapp-flotante"
       target="_blank"
       rel="noopener"
@@ -90,9 +107,13 @@
       <i class="fab fa-whatsapp"></i>
     </a>
 
+    <a href="#inicio" class="boton-ir-inicio" data-subir aria-label="Volver al inicio">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <header class="menu-principal">
       <nav class="contenedor-navegacion">
-        <a href="index.html" class="logo-marca">UPPER CREATORS</a>
+        <a href="index.html#inicio" class="logo-marca" data-inicio>UPPER CREATORS</a>
         <ul class="lista-enlaces">
           <li class="nav-inicio">
             <a href="index.html">
@@ -117,9 +138,10 @@
               <span>Corporativo</span>
             </a>
           </li>
-          <li class="nav-marcas">
-            <a href="#marcas">
-              <span>Marcas</span>
+          <li class="nav-cotizar">
+            <a href="#cotizar">
+              <i class="fas fa-file-invoice"></i>
+              <span>Solicitar cotización</span>
             </a>
           </li>
         </ul>
@@ -166,21 +188,21 @@
         <div class="contenedor-manifiesto" data-aos="fade-up">
           <span class="etiqueta-pequena">Sobre nosotros</span>
           <h2 class="titulo-seccion">Somos Upper Creators</h2>
-          <p class="texto-principal-hacemos">
+          <p class="texto-uniforme">
             Somos una agencia enfocada en la creación de contenido para redes
             sociales y marketing digital. Creemos que cada marca tiene algo que
             contar. Por eso, antes de grabar, diseñar o publicar, nos tomamos el
             tiempo de entender quién eres, qué quieres lograr y a quién quieres
             llegar.
           </p>
-          <p class="texto-cuerpo">
+          <p class="texto-uniforme">
             Unimos estrategia de contenidos, redes sociales, producción
             audiovisual y diseño gráfico para que tu marca se vea coherente,
             atractiva y profesional en todos lados. Combinamos creatividad,
             planificación y producción para crear contenido que de verdad
             conecte con tu gente, no solo que se vea bonito.
           </p>
-          <p class="texto-cuerpo">
+          <p class="texto-uniforme">
             Estamos en Santiago, trabajamos en toda la Región Metropolitana y
             acompañamos proyectos en todas las regiones de Chile. Trabajamos en
             proyectos puntuales y también acompañamos a marcas mes a mes con
@@ -200,67 +222,204 @@
             servicios con los que lo logramos:
           </p>
 
-          <div class="grid-servicios">
-            <article class="tarjeta-servicio" data-aos="fade-up">
-              <span class="numero-servicio">01</span>
-              <h3>Marketing digital y gestión de redes sociales</h3>
-              <p>
-                Creamos el contenido que tu cliente está buscando en redes
-                sociales y en Google. Pensamos qué publicar, lo grabamos, lo
-                diseñamos y lo publicamos por ti. Nos encargamos de la
-                planificación, creación de contenido, gestión de comunidad y
-                seguimiento, para que tus redes se mantengan activas y con
-                sentido.
-              </p>
+          <div class="vistas-servicios">
+            <article class="vista-servicio grid-corporativo-nivelado activa" data-servicio="01">
+              <div class="columna-video-corp">
+                <figure
+                  class="item-galeria-imagen"
+                  data-galeria-item
+                  tabindex="0"
+                  role="button"
+                  aria-label="Ampliar imagen de Marketing digital y gestión de redes sociales"
+                >
+                  <div class="barra-ventana-galeria">
+                    <span class="puntos-ventana"><i></i><i></i><i></i></span>
+                    <span class="titulo-ventana">uppercreators.com / marketing</span>
+                    <span class="icono-ventana"><i class="fas fa-expand"></i></span>
+                  </div>
+                  <div class="cuerpo-ventana-galeria">
+                    <img
+                      src="assets/img/galeria-whatsapp-2026-11-19.jpeg"
+                      alt="Marketing digital y gestión de redes sociales"
+                      loading="lazy"
+                    />
+                    <span class="overlay-ventana"
+                      ><i class="fas fa-expand"></i> Ampliar</span
+                    >
+                  </div>
+                  <figcaption class="pie-ventana-galeria">
+                    Marketing · Haz clic para ampliar
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="columna-texto-corp">
+                <span class="numero-servicio">01</span>
+                <h2>Marketing digital y gestión de redes sociales</h2>
+                <p>
+                  Creamos el contenido que tu cliente está buscando en redes
+                  sociales y en Google. Pensamos qué publicar, lo grabamos, lo
+                  diseñamos y lo publicamos por ti. Nos encargamos de la
+                  planificación, creación de contenido, gestión de comunidad y
+                  seguimiento, para que tus redes se mantengan activas y con
+                  sentido.
+                </p>
+              </div>
             </article>
 
-            <article class="tarjeta-servicio" data-aos="fade-up">
-              <span class="numero-servicio">02</span>
-              <h3>Producción audiovisual y fotografía</h3>
-              <p>
-                Hacemos videos y fotos que hacen que la gente se detenga a mirar
-                y quiera saber más de tu marca. Videos corporativos, contenido
-                para redes sociales, videos promocionales, entrevistas,
-                testimonios, videoclips, fotografía publicitaria y comercial, y
-                cobertura de eventos y activaciones en Santiago.
-              </p>
+            <article class="vista-servicio grid-corporativo-nivelado" data-servicio="02">
+              <div class="columna-video-corp">
+                <figure
+                  class="item-galeria-imagen"
+                  data-galeria-item
+                  tabindex="0"
+                  role="button"
+                  aria-label="Ampliar imagen de Producción audiovisual y fotografía"
+                >
+                  <div class="barra-ventana-galeria">
+                    <span class="puntos-ventana"><i></i><i></i><i></i></span>
+                    <span class="titulo-ventana">uppercreators.com / produccion</span>
+                    <span class="icono-ventana"><i class="fas fa-expand"></i></span>
+                  </div>
+                  <div class="cuerpo-ventana-galeria">
+                    <img
+                      src="assets/img/galeria-whatsapp-2026-11-19.jpeg"
+                      alt="Producción audiovisual y fotografía"
+                      loading="lazy"
+                    />
+                    <span class="overlay-ventana"
+                      ><i class="fas fa-expand"></i> Ampliar</span
+                    >
+                  </div>
+                  <figcaption class="pie-ventana-galeria">
+                    Producción · Haz clic para ampliar
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="columna-texto-corp">
+                <span class="numero-servicio">02</span>
+                <h2>Producción audiovisual y fotografía</h2>
+                <p>
+                  Hacemos videos y fotos que hacen que la gente se detenga a mirar
+                  y quiera saber más de tu marca. Videos corporativos, contenido
+                  para redes sociales, videos promocionales, entrevistas,
+                  testimonios, videoclips, fotografía publicitaria y comercial, y
+                  cobertura de eventos y activaciones en Santiago.
+                </p>
+              </div>
             </article>
 
-            <article class="tarjeta-servicio" data-aos="fade-up">
-              <span class="numero-servicio">03</span>
-              <h3>Diseño gráfico e identidad visual</h3>
-              <p>
-                Hacemos que tu marca se vea profesional y se reconozca a primera
-                vista. Creamos logotipos, identidad visual, piezas publicitarias,
-                flyers, material promocional, diseños para redes sociales,
-                catálogos, presentaciones, etiquetas, packaging y otros recursos
-                gráficos que representan la personalidad de tu marca.
-              </p>
+            <article class="vista-servicio grid-corporativo-nivelado" data-servicio="03">
+              <div class="columna-video-corp">
+                <figure
+                  class="item-galeria-imagen"
+                  data-galeria-item
+                  tabindex="0"
+                  role="button"
+                  aria-label="Ampliar imagen de Diseño gráfico e identidad visual"
+                >
+                  <div class="barra-ventana-galeria">
+                    <span class="puntos-ventana"><i></i><i></i><i></i></span>
+                    <span class="titulo-ventana">uppercreators.com / diseno</span>
+                    <span class="icono-ventana"><i class="fas fa-expand"></i></span>
+                  </div>
+                  <div class="cuerpo-ventana-galeria">
+                    <img
+                      src="assets/img/galeria-whatsapp-2026-11-19.jpeg"
+                      alt="Diseño gráfico e identidad visual"
+                      loading="lazy"
+                    />
+                    <span class="overlay-ventana"
+                      ><i class="fas fa-expand"></i> Ampliar</span
+                    >
+                  </div>
+                  <figcaption class="pie-ventana-galeria">
+                    Diseño · Haz clic para ampliar
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="columna-texto-corp">
+                <span class="numero-servicio">03</span>
+                <h2>Diseño gráfico e identidad visual</h2>
+                <p>
+                  Hacemos que tu marca se vea profesional y se reconozca a primera
+                  vista. Creamos logotipos, identidad visual, piezas publicitarias,
+                  flyers, material promocional, diseños para redes sociales,
+                  catálogos, presentaciones, etiquetas, packaging y otros recursos
+                  gráficos que representan la personalidad de tu marca.
+                </p>
+              </div>
             </article>
 
-            <article class="tarjeta-servicio" data-aos="fade-up">
-              <span class="numero-servicio">04</span>
-              <h3>Comunicación y relaciones públicas</h3>
-              <p>
-                Hacemos que hablen de tu marca, con una historia que valga la
-                pena contar. Te ayudamos con comunicados de prensa, coordinación
-                de entrevistas, gestión de contactos con medios y apoyo en
-                acciones de difusión, para que tu marca gane visibilidad en
-                Santiago y en otros medios.
-              </p>
+            <article class="vista-servicio grid-corporativo-nivelado" data-servicio="04">
+              <div class="columna-video-corp">
+                <figure
+                  class="item-galeria-imagen"
+                  data-galeria-item
+                  tabindex="0"
+                  role="button"
+                  aria-label="Ampliar imagen de Comunicación y relaciones públicas"
+                >
+                  <div class="barra-ventana-galeria">
+                    <span class="puntos-ventana"><i></i><i></i><i></i></span>
+                    <span class="titulo-ventana">uppercreators.com / comunicacion</span>
+                    <span class="icono-ventana"><i class="fas fa-expand"></i></span>
+                  </div>
+                  <div class="cuerpo-ventana-galeria">
+                    <img
+                      src="assets/img/galeria-whatsapp-2026-11-19.jpeg"
+                      alt="Comunicación y relaciones públicas"
+                      loading="lazy"
+                    />
+                    <span class="overlay-ventana"
+                      ><i class="fas fa-expand"></i> Ampliar</span
+                    >
+                  </div>
+                  <figcaption class="pie-ventana-galeria">
+                    Comunicación · Haz clic para ampliar
+                  </figcaption>
+                </figure>
+              </div>
+              <div class="columna-texto-corp">
+                <span class="numero-servicio">04</span>
+                <h2>Comunicación y relaciones públicas</h2>
+                <p>
+                  Hacemos que hablen de tu marca, con una historia que valga la
+                  pena contar. Te ayudamos con comunicados de prensa, coordinación
+                  de entrevistas, gestión de contactos con medios y apoyo en
+                  acciones de difusión, para que tu marca gane visibilidad en
+                  Santiago y en otros medios.
+                </p>
+              </div>
             </article>
+          </div>
+
+          <div class="selector-servicios" role="group" aria-label="Seleccionar servicio">
+            <button type="button" class="boton-servicio activo" data-servicio-boton="01" aria-pressed="true">
+              01 Marketing
+            </button>
+            <button type="button" class="boton-servicio" data-servicio-boton="02" aria-pressed="false">
+              02 Producción
+            </button>
+            <button type="button" class="boton-servicio" data-servicio-boton="03" aria-pressed="false">
+              03 Diseño
+            </button>
+            <button type="button" class="boton-servicio" data-servicio-boton="04" aria-pressed="false">
+              04 Comunicación
+            </button>
           </div>
 
           <div class="grid-sub-bloque">
             <div class="sub-texto">
-              <strong>Cómo lo hacemos</strong>
-              Cada proyecto parte entendiendo la marca, su audiencia y el
-              objetivo. Creamos contenido que se ve bien y cumple una función
-              clara en digital.
+              <h2>Cómo lo hacemos</h2>
+              <p class="texto-uniforme">
+                Cada proyecto parte entendiendo la marca, su audiencia y el
+                objetivo. Creamos contenido que se ve bien y cumple una función
+                clara en digital.
+              </p>
             </div>
             <div class="sub-texto">
-              <strong>Nuestra Meta</strong>
-              <p class="meta-destacada">
+              <h2>Nuestra Meta</h2>
+              <p class="texto-uniforme">
                 Ser el aliado estratégico que transforma la presencia digital de
                 las marcas en visibilidad real y constante.
               </p>
@@ -400,9 +559,8 @@
                 empresas y eventos que necesitan comunicar de forma profesional.
               </p>
               <a
-                href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes."
+                href="mailto:Rroman@uppercreators.com?subject=Cotizaci%C3%B3n%20de%20proyecto%20-%20Upper%20Creators&body=Hola%20Upper%20Creators%3A%0A%0AMe%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0AServicio%20de%20inter%C3%A9s%3A%0ADetalles%20del%20proyecto%3A%0A%0AQuedo%20atento%20a%20su%20respuesta."
                 class="boton-llamada-accion"
-                target="_blank"
                 >Cotizar Proyecto</a
               >
             </div>
@@ -650,7 +808,7 @@
               <summary>¿Cómo puedo solicitar una cotización?</summary>
               <p>
                 Puedes contactarnos directamente por WhatsApp o por correo a
-                hola@uppercreators.com. Cuéntanos sobre tu proyecto, qué
+                Rroman@uppercreators.com. Cuéntanos sobre tu proyecto, qué
                 servicios necesitas y cuáles son tus objetivos. Nuestro equipo te
                 orientará para desarrollar una propuesta acorde a tus
                 necesidades.
@@ -669,9 +827,80 @@
             comunicarla. Conversemos sobre tu proyecto y encontremos juntos la
             mejor manera de darle forma.
           </p>
-          <a href="mailto:hola@uppercreators.com" class="boton-llamada-accion"
-            >Solicitar una cotización</a
-          >
+          <form class="formulario-cotizacion" id="formularioCotizacion" novalidate>
+            <div class="campo-formulario">
+              <label for="cot-nombre">Nombre *</label>
+              <input
+                id="cot-nombre"
+                name="nombre"
+                type="text"
+                autocomplete="name"
+                placeholder="Ej.: María González"
+                data-campo="nombre"
+                required
+                minlength="2"
+              />
+              <span class="error-campo" data-error="nombre" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="cot-correo">Correo *</label>
+              <input
+                id="cot-correo"
+                name="correo"
+                type="email"
+                autocomplete="email"
+                placeholder="Ej.: maria@empresa.cl"
+                data-campo="correo"
+                required
+              />
+              <span class="error-campo" data-error="correo" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="cot-empresa">Empresa</label>
+              <input
+                id="cot-empresa"
+                name="empresa"
+                type="text"
+                autocomplete="organization"
+                placeholder="Ej.: Mi Empresa SpA (opcional)"
+                data-campo="empresa"
+              />
+              <span class="error-campo" data-error="empresa" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario">
+              <label for="cot-servicio">Servicio *</label>
+              <select id="cot-servicio" name="servicio" data-campo="servicio" required>
+                <option value="" selected disabled>Selecciona el servicio que necesitas</option>
+                <option value="Marketing digital y gestión de redes sociales">Marketing digital y gestión de redes sociales</option>
+                <option value="Producción audiovisual y fotografía">Producción audiovisual y fotografía</option>
+                <option value="Diseño gráfico e identidad visual">Diseño gráfico e identidad visual</option>
+                <option value="Comunicación y relaciones públicas">Comunicación y relaciones públicas</option>
+              </select>
+              <span class="error-campo" data-error="servicio" aria-live="polite"></span>
+            </div>
+
+            <div class="campo-formulario campo-completo">
+              <label for="cot-mensaje">Cuéntanos sobre tu proyecto *</label>
+              <textarea
+                id="cot-mensaje"
+                name="mensaje"
+                rows="5"
+                placeholder="Cuéntanos qué necesitas: tipo de proyecto, objetivos y plazos aproximados"
+                data-campo="mensaje"
+                required
+                minlength="10"
+              ></textarea>
+              <span class="error-campo" data-error="mensaje" aria-live="polite"></span>
+            </div>
+
+            <div class="acciones-formulario campo-completo">
+              <button type="submit" class="boton-llamada-accion">Enviar cotización</button>
+              <p class="estado-formulario" role="status" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -687,7 +916,7 @@
           <i class="fab fa-instagram"></i>
         </a>
         <a
-          href="https://wa.me/56942709831?text=Hola,%20llegué%20desde%20la%20web.%0AEstoy%20buscando%20mejorar%20mis%20redes."
+          href="https://wa.me/56942709831?text=Hola%20Upper%20Creators%2C%20llegu%C3%A9%20desde%20la%20web%20y%20quiero%20solicitar%20una%20cotizaci%C3%B3n.%0A%0ANombre%3A%0AEmpresa%3A%0AServicio%20de%20inter%C3%A9s%3A%0ACont%C3%A1ctome%20al%20correo%20Rroman%40uppercreators.com"
           class="icono-red whatsapp"
           target="_blank"
           rel="noopener"
@@ -695,9 +924,9 @@
           <i class="fab fa-whatsapp"></i>
         </a>
         <a
-          href="mailto:hola@uppercreators.com"
+          href="mailto:Rroman@uppercreators.com?subject=Cotizaci%C3%B3n%20de%20proyecto%20-%20Upper%20Creators&body=Hola%20Upper%20Creators%3A%0A%0AMe%20gustar%C3%ADa%20solicitar%20una%20cotizaci%C3%B3n%20para%20un%20proyecto.%0A%0ANombre%3A%0AEmpresa%3A%0AServicio%20de%20inter%C3%A9s%3A%0ADetalles%20del%20proyecto%3A%0A%0AQuedo%20atento%20a%20su%20respuesta."
           class="icono-red correo"
-          aria-label="Escribir a hola@uppercreators.com"
+          aria-label="Escribir a Rroman@uppercreators.com"
         >
           <i class="fas fa-envelope"></i>
         </a>
