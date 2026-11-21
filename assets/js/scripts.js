@@ -48,17 +48,54 @@ const configurarDireccionMarquesinas = () => {
   let ultimoScroll = window.scrollY;
   let actualizando = false;
 
+  const obtenerAnimaciones = () =>
+    [...document.querySelectorAll(".marquesina-track")].flatMap((track) =>
+      typeof track.getAnimations === "function" ? track.getAnimations() : []
+    );
+
+  const normalizarCiclo = (animacion) => {
+    const duracion = animacion.effect?.getComputedTiming().duration;
+    if (!Number.isFinite(duracion) || duracion <= 0) return;
+
+    const tiempo = Number(animacion.currentTime);
+    if (!Number.isFinite(tiempo)) return;
+
+    const margen = Math.min(250, duracion / 4);
+    const modulo = ((tiempo % duracion) + duracion) % duracion;
+    let destino = modulo;
+
+    if (animacion.playbackRate < 0 && modulo < margen) {
+      destino = duracion + modulo;
+    } else if (animacion.playbackRate > 0 && tiempo > duracion * 2) {
+      destino = modulo;
+    }
+
+    if (Math.abs(tiempo - destino) > 0.5) {
+      animacion.currentTime = destino;
+    }
+  };
+
+  const mantenerCiclo = () => {
+    obtenerAnimaciones().forEach((animacion) => {
+      normalizarCiclo(animacion);
+      if (animacion.playState !== "running") {
+        animacion.play();
+      }
+    });
+    requestAnimationFrame(mantenerCiclo);
+  };
+
   const aplicarDireccion = (haciaAbajo) => {
     const velocidad = haciaAbajo ? 1 : -1;
 
-    document.querySelectorAll(".marquesina-track").forEach((track) => {
-      if (typeof track.getAnimations !== "function") return;
-
-      track.getAnimations().forEach((animacion) => {
-        if (animacion.playbackRate !== velocidad) {
-          animacion.playbackRate = velocidad;
-        }
-      });
+    obtenerAnimaciones().forEach((animacion) => {
+      if (animacion.playbackRate !== velocidad) {
+        animacion.playbackRate = velocidad;
+      }
+      normalizarCiclo(animacion);
+      if (animacion.playState !== "running") {
+        animacion.play();
+      }
     });
   };
 
@@ -81,6 +118,8 @@ const configurarDireccionMarquesinas = () => {
     },
     { passive: true }
   );
+
+  requestAnimationFrame(mantenerCiclo);
 };
 
 configurarDireccionMarquesinas();
@@ -525,6 +564,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const videoHero = document.querySelector(".video-fondo");
 
     if (videoHero) {
+        let heroVisible = true;
+
         // Asegura el autoplay silenciado (algunos navegadores lo bloquean al cargar)
         const reproducirHero = () => {
             videoHero.muted = true;
@@ -553,7 +594,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const observadorHero = new IntersectionObserver(
                 (entradas) => {
                     entradas.forEach((entrada) => {
-                        if (entrada.isIntersecting) {
+                        heroVisible = entrada.isIntersecting;
+                        if (heroVisible) {
                             reproducirHero();
                         } else {
                             videoHero.pause();
@@ -562,12 +604,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 { threshold: 0.1 }
             );
-            observadorHero.observe(videoHero);
+            observadorHero.observe(videoHero.closest(".hero-bienvenida") || videoHero);
         }
 
         // Ahorra recursos cuando la pestaña no está visible
         document.addEventListener("visibilitychange", () => {
-            if (document.hidden) {
+            if (document.hidden || !heroVisible) {
                 videoHero.pause();
             } else {
                 reproducirHero();
