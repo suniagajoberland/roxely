@@ -560,7 +560,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // 3. VIDEO DEL HEADER (AUTOPLAY GARANTIZADO EN MÓVIL Y DESKTOP)
+    // 3. VIDEO DESTACADO (AUTOPLAY GARANTIZADO EN MÓVIL Y DESKTOP)
     const videoHero = document.querySelector(".video-fondo");
 
     if (videoHero) {
@@ -604,7 +604,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 },
                 { threshold: 0.1 }
             );
-            observadorHero.observe(videoHero.closest(".hero-bienvenida") || videoHero);
+            observadorHero.observe(videoHero);
         }
 
         // Ahorra recursos cuando la pestaña no está visible
@@ -623,6 +623,45 @@ document.addEventListener("DOMContentLoaded", () => {
     // Hemos eliminado el código JS de Drag & Drop para las marquesinas.
     // Esto permite que el scroll vertical en móviles sea 100% fluido
     // y evita que el cursor cambie a "manito" de arrastre.
-    
+
+    const configurarHeaderGalería = () => {
+        const header = document.querySelector(".uc-header");
+        if (!header) return;
+
+        const cards = Array.from(header.querySelectorAll(".uc-card"));
+        if (!cards.length) return;
+
+        const setActiveCard = (targetCard) => {
+            cards.forEach((card) => {
+                const activa = card === targetCard;
+                card.classList.toggle("is-active", activa);
+                if (activa) {
+                    card.setAttribute("aria-current", "true");
+                } else {
+                    card.removeAttribute("aria-current");
+                }
+            });
+        };
+
+        cards.forEach((card) => {
+            card.addEventListener("click", (event) => {
+                if (event.target.closest("a")) return;
+                if (!card.classList.contains("is-active")) {
+                    setActiveCard(card);
+                }
+            });
+        });
+
+        header.addEventListener("keydown", (event) => {
+            if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+            const currentIndex = cards.findIndex((card) => card.classList.contains("is-active"));
+            const step = event.key === "ArrowRight" ? 1 : -1;
+            const nextIndex = (currentIndex + step + cards.length) % cards.length;
+            setActiveCard(cards[nextIndex]);
+        });
+    };
+
+    configurarHeaderGalería();
+
     console.log("Sitio cargado: Marquesinas configuradas con CSS nativo para mayor fluidez.");
 });
