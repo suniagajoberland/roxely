@@ -1873,6 +1873,12 @@ main p[class] {
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+  .migas-pan {
+    display: none;
+  }
+}
+
 .pie-columnas {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
