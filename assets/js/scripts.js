@@ -432,6 +432,27 @@ function configurarFormularioCotizacion() {
 
 configurarFormularioCotizacion();
 
+const configurarAcordeonFAQ = () => {
+  document.addEventListener(
+    "toggle",
+    (event) => {
+      const faq = event.target;
+      if (faq.tagName !== "DETAILS" || !faq.open) return;
+      if (!faq.classList.contains("faq-item")) return;
+
+      const lista = faq.closest(".lista-faq");
+      if (!lista) return;
+
+      lista.querySelectorAll("details.faq-item[open]").forEach((otro) => {
+        if (otro !== faq) otro.open = false;
+      });
+    },
+    true
+  );
+};
+
+configurarAcordeonFAQ();
+
 function configurarVideosContenido() {
   const videos = [...document.querySelectorAll("main video:not(.video-fondo)")];
   if (!videos.length) return;
@@ -517,6 +538,24 @@ function configurarVideosContenido() {
 }
 
 configurarVideosContenido();
+
+const preseleccionarServicio = () => {
+  const parametros = new URLSearchParams(window.location.search);
+  const servicio = parametros.get("servicio");
+  if (!servicio) return;
+
+  const servicios = {
+    marketing: "Marketing digital y gestión de redes sociales",
+    diseno: "Diseño gráfico e identidad visual",
+    produccion: "Producción audiovisual y fotografía",
+    comunicacion: "Comunicación y relaciones públicas",
+  };
+  const selector = document.querySelector("#formularioCotizacion [data-campo='servicio']");
+
+  if (selector && servicios[servicio]) {
+    selector.value = servicios[servicio];
+  }
+};
 
 document.addEventListener("DOMContentLoaded", () => {
     
@@ -662,6 +701,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     configurarHeaderGalería();
+
+    preseleccionarServicio();
 
     console.log("Sitio cargado: Marquesinas configuradas con CSS nativo para mayor fluidez.");
 });

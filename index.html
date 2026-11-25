@@ -52,22 +52,79 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "ProfessionalService",
-        "name": "Upper Creators",
-        "description": "Agencia de marketing digital y producción audiovisual en Santiago. Contenido para redes sociales, videos, fotografía, diseño gráfico y relaciones públicas.",
-        "url": "https://uppercreators.com/",
-        "email": "Rroman@uppercreators.com",
-        "telephone": "+56942709831",
-        "areaServed": ["Santiago", "Región Metropolitana", "Chile"],
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Santiago",
-          "addressRegion": "Región Metropolitana",
-          "addressCountry": "CL"
-        },
-        "sameAs": [
-          "https://www.instagram.com/uppercreators",
-          "https://wa.me/56942709831"
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "name": "Upper Creators",
+            "description": "Agencia de marketing digital y producción audiovisual en Santiago. Contenido para redes sociales, videos, fotografía, diseño gráfico y relaciones públicas.",
+            "url": "https://uppercreators.com/",
+            "email": "Rroman@uppercreators.com",
+            "telephone": "+56942709831",
+            "areaServed": ["Santiago", "Región Metropolitana", "Chile"],
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Santiago",
+              "addressRegion": "Región Metropolitana",
+              "addressCountry": "CL"
+            },
+            "sameAs": [
+              "https://www.instagram.com/uppercreators",
+              "https://wa.me/56942709831"
+            ]
+          },
+          {
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "¿Qué servicios ofrece Upper Creators?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Acompañamos a tu marca en toda su comunicación, desde la estrategia hasta la publicación: contenido y redes sociales, producción audiovisual, fotografía publicitaria y comercial, diseño gráfico e identidad visual, y comunicación y relaciones públicas. Puedes ver el detalle de cada servicio en nuestra página de servicios."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Puedo contratar un servicio por separado?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Puedes contratar un servicio específico o combinar distintos servicios según las necesidades de tu marca."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajan con planes mensuales de contenido?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Podemos desarrollar propuestas de trabajo continuo para marcas que necesitan planificación, creación y publicación periódica de contenido."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Trabajan con empresas y emprendimientos?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Sí. Desarrollamos proyectos para empresas, emprendimientos, profesionales y organizaciones de distintos rubros."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿En qué zonas trabajan?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Estamos ubicados en Santiago y trabajamos principalmente en la Región Metropolitana. También desarrollamos proyectos en otras regiones de Chile."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "¿Cómo puedo solicitar una cotización?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Puedes contactarnos directamente por WhatsApp o por correo a Rroman@uppercreators.com. Cuéntanos sobre tu proyecto, qué servicios necesitas y cuáles son tus objetivos. Nuestro equipo te orientará para desarrollar una propuesta acorde a tus necesidades. También puedes usar el formulario de cotización."
+                }
+              }
+            ]
+          }
         ]
       }
     </script>
@@ -107,23 +164,31 @@
       <i class="fab fa-whatsapp"></i>
     </a>
 
-    <a href="#inicio" class="boton-ir-inicio" data-subir aria-label="Volver al inicio">
+    <a
+      href="#inicio"
+      class="boton-ir-inicio"
+      data-subir
+      aria-label="Volver al inicio"
+    >
       <i class="fas fa-arrow-up"></i>
     </a>
 
     <header class="menu-principal">
-      <nav class="contenedor-navegacion">
-        <a href="index.html#inicio" class="logo-marca" data-inicio>UPPER CREATORS</a>
+      <nav class="contenedor-navegacion" aria-label="Navegación principal">
+        <a href="index.html#inicio" class="logo-marca" data-inicio
+          >UPPER CREATORS</a
+        >
         <ul class="lista-enlaces">
           <li class="nav-inicio">
-            <a href="index.html">
+            <a href="index.html" class="active" aria-current="page">
               <i class="fas fa-home"></i>
               <span>Inicio</span>
             </a>
           </li>
-          <li class="nav-hacemos">
-            <a href="#que-hacemos">
-              <span>Qué Hacemos</span>
+          <li class="nav-servicios">
+            <a href="servicios.html">
+              <i class="fas fa-layer-group"></i>
+              <span>Servicios</span>
             </a>
           </li>
           <li class="nav-redes">
@@ -139,9 +204,9 @@
             </a>
           </li>
           <li class="nav-cotizar">
-            <a href="#cotizar">
+            <a href="contacto.html">
               <i class="fas fa-file-invoice"></i>
-              <span>Solicitar cotización</span>
+              <span>Contacto</span>
             </a>
           </li>
         </ul>
@@ -160,7 +225,7 @@
           <i class="fas fa-clock"></i>
           Lun–Vie, 9:00 a 18:00
         </span>
-        <a href="index.html#cotizar" class="dato-contacto">
+        <a href="contacto.html" class="dato-contacto">
           <i class="fas fa-envelope"></i>
           Contacto
         </a>
@@ -209,24 +274,30 @@
           <h2 class="titulo-seccion">Qué hacemos</h2>
 
           <p class="texto-principal-hacemos">
-            Hacemos que tu marca se vea, se entienda y se recuerde. Estos son los
-            servicios con los que lo logramos:
+            Hacemos que tu marca se vea, se entienda y se recuerde. Estos son
+            los servicios con los que lo logramos:
           </p>
         </div>
       </section>
 
       <header class="uc-header">
-        <div class="uc-gallery" role="region" aria-label="Galería de categorías">
+        <div
+          class="uc-gallery"
+          role="region"
+          aria-label="Galería de categorías"
+        >
           <article
             class="uc-card"
             data-index="0"
-            style="background-image: url('assets/img/marketing.jfif');"
+            style="background-image: url(&quot;assets/img/marketing.jfif&quot;)"
           >
             <div class="uc-card-content">
               <span class="uc-accent-bar"></span>
               <h2 class="uc-card-title">Marketing digital y redes sociales</h2>
               <div class="uc-card-actions">
-                <a href="galeria.html" class="uc-category-btn">Explorar Categoría →</a>
+                <a href="marketing.html" class="uc-category-btn"
+                  >Explorar Categoría →</a
+                >
               </div>
             </div>
           </article>
@@ -234,13 +305,15 @@
           <article
             class="uc-card"
             data-index="1"
-            style="background-image: url('assets/img/diseno.jfif');"
+            style="background-image: url(&quot;assets/img/diseno.jfif&quot;)"
           >
             <div class="uc-card-content">
               <span class="uc-accent-bar"></span>
               <h2 class="uc-card-title">Diseño gráfico e identidad visual</h2>
               <div class="uc-card-actions">
-                <a href="index.html#que-hacemos" class="uc-category-btn">Explorar Categoría →</a>
+                <a href="diseno.html" class="uc-category-btn"
+                  >Explorar Categoría →</a
+                >
               </div>
             </div>
           </article>
@@ -248,13 +321,17 @@
           <article
             class="uc-card is-active"
             data-index="2"
-            style="background-image: url('assets/img/produccion.jfif');"
+            style="
+              background-image: url(&quot;assets/img/produccion.jfif&quot;);
+            "
           >
             <div class="uc-card-content">
               <span class="uc-accent-bar"></span>
               <h2 class="uc-card-title">Producción audiovisual y fotografía</h2>
               <div class="uc-card-actions">
-                <a href="index.html#stop-motion" class="uc-category-btn">Explorar Categoría →</a>
+                <a href="produccion.html" class="uc-category-btn"
+                  >Explorar Categoría →</a
+                >
               </div>
             </div>
           </article>
@@ -262,13 +339,17 @@
           <article
             class="uc-card"
             data-index="3"
-            style="background-image: url('assets/img/comunicacion.jfif');"
+            style="
+              background-image: url(&quot;assets/img/comunicacion.jfif&quot;);
+            "
           >
             <div class="uc-card-content">
               <span class="uc-accent-bar"></span>
               <h2 class="uc-card-title">Comunicación y relaciones públicas</h2>
               <div class="uc-card-actions">
-                <a href="corporativo.html" class="uc-category-btn">Explorar Categoría →</a>
+                <a href="comunicacion.html" class="uc-category-btn"
+                  >Explorar Categoría →</a
+                >
               </div>
             </div>
           </article>
@@ -323,67 +404,6 @@
             proyectos puntuales y también acompañamos a marcas mes a mes con
             contenido continuo.
           </p>
-        </div>
-      </section>
-
-      <!--STOP MOTION-->
-      <section class="seccion-estandar" id="stop-motion">
-        <div class="contenedor-manifiesto" data-aos="fade-up">
-          <span
-            class="etiqueta-pequena"
-            style="display: block; text-align: center"
-            >Creatividad Cuadro a Cuadro</span
-          >
-          <h2
-            class="titulo-seccion"
-            style="text-align: center; margin-bottom: 20px"
-          >
-            STOP MOTION
-          </h2>
-
-          <p
-            class="texto-principal-hacemos"
-            style="
-              text-align: center;
-              margin-bottom: 50px;
-              max-width: 800px;
-              margin-left: auto;
-              margin-right: auto;
-              font-weight: 300;
-            "
-          >
-            Creamos piezas en <strong>stop motion</strong> para comunicar ideas
-            de forma creativa, dinámica y altamente memorable.
-          </p>
-
-          <div class="grid-stop-motion">
-            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="100">
-              <video loop muted playsinline preload="metadata">
-                <source
-                  src="assets/video/motion/Paz casa.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-
-            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="200">
-              <video loop muted playsinline preload="metadata">
-                <source
-                  src="assets/video//motion/Bon O Bon Stop Motion.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-
-            <div class="video-card-sm" data-aos="zoom-in" data-aos-delay="300">
-              <video loop muted playsinline preload="metadata">
-                <source
-                  src="assets/video/motion/Fai Stop Motion.mp4"
-                  type="video/mp4"
-                />
-              </video>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -479,9 +499,7 @@
       <section class="seccion-estandar" id="por-que-upper-creators">
         <div class="contenedor-manifiesto" data-aos="fade-up">
           <span class="etiqueta-pequena">Diferenciadores</span>
-          <h2 class="titulo-seccion">
-            ¿Por qué trabajar con Upper Creators?
-          </h2>
+          <h2 class="titulo-seccion">¿Por qué trabajar con Upper Creators?</h2>
           <p class="texto-principal-hacemos">
             Porque comunicar una marca va más allá de publicar imágenes o crear
             videos. Nos involucramos en cada proyecto para que lo que publiques
@@ -491,8 +509,8 @@
             <article class="tarjeta-beneficio" data-aos="fade-up">
               <h3>Creatividad con propósito</h3>
               <p>
-                Cada propuesta se piensa desde los objetivos y las necesidades de
-                comunicación de tu marca.
+                Cada propuesta se piensa desde los objetivos y las necesidades
+                de comunicación de tu marca.
               </p>
             </article>
             <article class="tarjeta-beneficio" data-aos="fade-up">
@@ -543,9 +561,9 @@
               <span class="numero-servicio">02</span>
               <h3>Planificamos la propuesta</h3>
               <p>
-                Definimos el enfoque creativo, los servicios necesarios y el plan
-                de trabajo para desarrollar el proyecto con claridad desde el
-                inicio.
+                Definimos el enfoque creativo, los servicios necesarios y el
+                plan de trabajo para desarrollar el proyecto con claridad desde
+                el inicio.
               </p>
             </article>
             <article class="paso-proceso" data-aos="fade-up">
@@ -584,7 +602,8 @@
                 estrategia hasta la publicación: contenido y redes sociales,
                 producción audiovisual, fotografía publicitaria y comercial,
                 diseño gráfico e identidad visual, y comunicación y relaciones
-                públicas.
+                públicas. Puedes ver el detalle de cada servicio en
+                <a href="servicios.html">nuestra página de servicios</a>.
               </p>
             </details>
             <details class="faq-item">
@@ -624,13 +643,16 @@
               </p>
             </details>
             <details class="faq-item">
-              <summary>¿Cómo puedo solicitar una cotización?</summary>
+              <summary>
+                <h3>¿Cómo puedo solicitar una cotización?</h3>
+              </summary>
               <p>
                 Puedes contactarnos directamente por WhatsApp o por correo a
                 Rroman@uppercreators.com. Cuéntanos sobre tu proyecto, qué
-                servicios necesitas y cuáles son tus objetivos. Nuestro equipo te
-                orientará para desarrollar una propuesta acorde a tus
-                necesidades.
+                servicios necesitas y cuáles son tus objetivos. Nuestro equipo
+                te orientará para desarrollar una propuesta acorde a tus
+                necesidades. También puedes usar el
+                <a href="contacto.html">formulario de cotización</a>.
               </p>
             </details>
           </div>
@@ -646,85 +668,58 @@
             comunicarla. Conversemos sobre tu proyecto y encontremos juntos la
             mejor manera de darle forma.
           </p>
-          <form class="formulario-cotizacion" id="formularioCotizacion" novalidate>
-            <div class="campo-formulario">
-              <label for="cot-nombre">Nombre *</label>
-              <input
-                id="cot-nombre"
-                name="nombre"
-                type="text"
-                autocomplete="name"
-                placeholder="Ej.: María González"
-                data-campo="nombre"
-                required
-                minlength="2"
-              />
-              <span class="error-campo" data-error="nombre" aria-live="polite"></span>
-            </div>
-
-            <div class="campo-formulario">
-              <label for="cot-correo">Correo *</label>
-              <input
-                id="cot-correo"
-                name="correo"
-                type="email"
-                autocomplete="email"
-                placeholder="Ej.: maria@empresa.cl"
-                data-campo="correo"
-                required
-              />
-              <span class="error-campo" data-error="correo" aria-live="polite"></span>
-            </div>
-
-            <div class="campo-formulario">
-              <label for="cot-empresa">Empresa</label>
-              <input
-                id="cot-empresa"
-                name="empresa"
-                type="text"
-                autocomplete="organization"
-                placeholder="Ej.: Mi Empresa SpA (opcional)"
-                data-campo="empresa"
-              />
-              <span class="error-campo" data-error="empresa" aria-live="polite"></span>
-            </div>
-
-            <div class="campo-formulario">
-              <label for="cot-servicio">Servicio *</label>
-              <select id="cot-servicio" name="servicio" data-campo="servicio" required>
-                <option value="" selected disabled>Selecciona el servicio que necesitas</option>
-                <option value="Marketing digital y gestión de redes sociales">Marketing digital y gestión de redes sociales</option>
-                <option value="Producción audiovisual y fotografía">Producción audiovisual y fotografía</option>
-                <option value="Diseño gráfico e identidad visual">Diseño gráfico e identidad visual</option>
-                <option value="Comunicación y relaciones públicas">Comunicación y relaciones públicas</option>
-              </select>
-              <span class="error-campo" data-error="servicio" aria-live="polite"></span>
-            </div>
-
-            <div class="campo-formulario campo-completo">
-              <label for="cot-mensaje">Cuéntanos sobre tu proyecto *</label>
-              <textarea
-                id="cot-mensaje"
-                name="mensaje"
-                rows="5"
-                placeholder="Cuéntanos qué necesitas: tipo de proyecto, objetivos y plazos aproximados"
-                data-campo="mensaje"
-                required
-                minlength="10"
-              ></textarea>
-              <span class="error-campo" data-error="mensaje" aria-live="polite"></span>
-            </div>
-
-            <div class="acciones-formulario campo-completo">
-              <button type="submit" class="boton-llamada-accion">Enviar cotización</button>
-              <p class="estado-formulario" role="status" aria-live="polite"></p>
-            </div>
-          </form>
+          <div class="acciones-cta">
+            <a href="contacto.html" class="boton-llamada-accion"
+              >Solicitar cotización</a
+            >
+          </div>
+          <p class="cta-datos">
+            WhatsApp
+            <a href="https://wa.me/56942709831" target="_blank" rel="noopener"
+              >+56 9 4270 9831</a
+            >
+            · Correo
+            <a href="mailto:Rroman@uppercreators.com"
+              >Rroman@uppercreators.com</a
+            >
+          </p>
         </div>
       </section>
     </main>
 
     <footer class="pie-pagina">
+      <nav class="pie-columnas" aria-label="Enlaces del sitio">
+        <section class="pie-columna">
+          <h2>Servicios</h2>
+          <ul>
+            <li>
+              <a href="marketing.html">Marketing digital y redes sociales</a>
+            </li>
+            <li><a href="diseno.html">Diseño gráfico e identidad visual</a></li>
+            <li>
+              <a href="produccion.html">Producción audiovisual y fotografía</a>
+            </li>
+            <li>
+              <a href="comunicacion.html">Comunicación y relaciones públicas</a>
+            </li>
+          </ul>
+        </section>
+        <section class="pie-columna">
+          <h2>Portafolio</h2>
+          <ul>
+            <li><a href="galeria.html">Redes sociales</a></li>
+            <li><a href="corporativo.html">Corporativo</a></li>
+          </ul>
+        </section>
+        <section class="pie-columna">
+          <h2>Upper Creators</h2>
+          <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </section>
+      </nav>
       <div class="barra-redes">
         <a
           href="https://www.instagram.com/uppercreators?igsh=MXh3aWYyOXBwcHo5Zg%3D%3D&utm_source=qr"
@@ -750,9 +745,13 @@
           <i class="fas fa-envelope"></i>
         </a>
       </div>
-
-      <p style="opacity: 0.5; font-size: 0.8rem">
+      <p class="pie-legal">
         © 2026 UPPER CREATORS. Todos los derechos reservados.
+      </p>
+      <p class="pie-legal">
+        Santiago, Región Metropolitana, Chile ·
+        <a href="tel:+56942709831">+56 9 4270 9831</a> ·
+        <a href="mailto:Rroman@uppercreators.com">Rroman@uppercreators.com</a>
       </p>
     </footer>
 

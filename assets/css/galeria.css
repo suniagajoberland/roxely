@@ -1,6 +1,6 @@
 /* --- CONFIGURACIÓN DE PÁGINA --- */
 .galeria-container {
-  padding: 120px 20px 80px;
+  padding: 170px 20px 80px;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -8,6 +8,13 @@
 .header-galeria {
   text-align: center;
   margin-bottom: 80px;
+}
+
+.header-galeria p {
+  max-width: 760px;
+  margin: 20px auto 0;
+  color: var(--texto-secundario);
+  line-height: 1.7;
 }
 
 /* --- GRID DE 3 COLUMNAS --- */
@@ -100,6 +107,10 @@
 }
 
 @media (max-width: 768px) {
+  .galeria-container {
+    padding-top: 165px;
+  }
+
   .grid-videos {
     grid-template-columns: 1fr;
     gap: 24px;
