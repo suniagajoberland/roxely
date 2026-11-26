@@ -204,6 +204,33 @@
   margin-bottom: 6px;
 }
 
+.tarjeta-categoria .tarjeta-imagen {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.tarjeta-categoria .tarjeta-imagen img {
+  display: block;
+  height: 190px;
+  margin-bottom: 0;
+}
+
+.tarjeta-categoria .tarjeta-imagen::after {
+  content: attr(data-title);
+  position: absolute;
+  left: 16px;
+  top: 14px;
+  max-width: 58%;
+  z-index: 2;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+  text-wrap: balance;
+}
+
 .cta-interno {
   margin-top: 60px;
   padding: 44px 28px;
