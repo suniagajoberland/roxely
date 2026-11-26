@@ -1823,6 +1823,20 @@ main p[class] {
     padding: 16px 0;
   }
 
+  .uc-nav {
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px var(--uc-pad);
+  }
+
+  .uc-menu {
+    width: 100%;
+  }
+
+  .uc-servicios-lista {
+    display: none !important;
+  }
+
   .uc-gallery {
     flex-direction: column;
     height: 540px;
@@ -1834,18 +1848,33 @@ main p[class] {
   }
 
   .uc-card-content {
-    justify-content: flex-start;
-    padding: 16px 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    text-align: center;
   }
 
   .uc-accent-bar {
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+  }
+
+  .uc-card-title {
+    font-size: clamp(1.6rem, 6vw, 2.6rem);
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 3px 14px rgba(0, 0, 0, 0.9);
   }
 
   .uc-card-actions {
     bottom: 14px;
     left: 20px;
     right: 20px;
+    justify-content: center;
+  }
+
+  .uc-card.is-active .uc-card-title {
+    font-size: clamp(1.9rem, 7vw, 3.1rem);
+    text-shadow: 0 4px 18px rgba(0, 0, 0, 0.95);
   }
 }
 
