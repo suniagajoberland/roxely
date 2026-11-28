@@ -64,9 +64,9 @@ const configurarDireccionMarquesinas = () => {
     const modulo = ((tiempo % duracion) + duracion) % duracion;
     let destino = modulo;
 
-    if (animacion.playbackRate < 0 && modulo < margen) {
+    if (tiempo < margen) {
       destino = duracion + modulo;
-    } else if (animacion.playbackRate > 0 && tiempo > duracion * 2) {
+    } else if (tiempo > duracion * 2) {
       destino = modulo;
     }
 
