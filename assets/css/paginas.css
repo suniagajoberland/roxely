@@ -21,6 +21,8 @@
 .cabecera-interno > div:only-child {
   grid-column: 1 / -1;
   max-width: 760px;
+  justify-self: center;
+  text-align: center;
 }
 
 .banner-categoria {

@@ -558,7 +558,22 @@ const preseleccionarServicio = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-    
+    const menuPrincipal = document.querySelector(".menu-principal");
+    const ajustarAlturaMenu = () => {
+        if (!menuPrincipal) return;
+        document.documentElement.style.setProperty("--altura-menu", `${menuPrincipal.offsetHeight}px`);
+    };
+
+    ajustarAlturaMenu();
+
+    if (menuPrincipal) {
+        if ("ResizeObserver" in window) {
+            new ResizeObserver(ajustarAlturaMenu).observe(menuPrincipal);
+        } else {
+            window.addEventListener("resize", ajustarAlturaMenu);
+        }
+    }
+
     // 1. INICIALIZAR AOS (Animaciones al hacer scroll)
     // duration: tiempo de la animación en ms
     // once: si es true, la animación solo ocurre la primera vez que se ve

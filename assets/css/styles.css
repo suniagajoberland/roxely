@@ -20,11 +20,12 @@
   --brand-facebook: #1877f2;
   --brand-youtube: #ff0000;
   --brand-tiktok: #000000;
+  --altura-menu: 135px;
 }
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 90px;
+  scroll-padding-top: var(--altura-menu);
 }
 
 * {
@@ -500,7 +501,7 @@ body {
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin-top: 40px;
+  margin-top: var(--altura-menu);
   background:
     radial-gradient(circle at 50% 0%, rgba(111, 56, 245, 0.16), transparent 55%),
     #0b1220;
@@ -621,6 +622,15 @@ body {
   max-width: 1000px;
   margin: 0 auto;
   padding: 0 40px;
+}
+
+.texto-post-categorias {
+  padding-top: 50px;
+}
+
+.texto-post-categorias .texto-principal-hacemos {
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .texto-principal-hacemos {
@@ -1431,7 +1441,7 @@ body {
 .hero-bienvenida {
   width: 100%;
   max-width: 100%;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 @media (max-width: 768px) {
   .seccion-que-hacemos,
@@ -1891,36 +1901,6 @@ main p[class] {
   }
 }
 
-.migas-pan {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 40px;
-  font-size: 0.82rem;
-  color: var(--texto-secundario);
-}
-
-.migas-pan a {
-  color: var(--texto-secundario);
-  text-decoration: none;
-}
-
-.migas-pan a:hover {
-  color: var(--color-cian);
-}
-
-.migas-pan [aria-current="page"] {
-  color: var(--texto-principal);
-  font-weight: 600;
-}
-
-@media (max-width: 768px) {
-  .migas-pan {
-    display: none;
-  }
-}
-
 .pie-columnas {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1984,9 +1964,10 @@ body.pagina-interna main p {
   margin-top: 30px;
 }
 
-.cta-datos {
-  margin-top: 22px;
+.seccion-cta-final .cta-datos {
+  margin-top: 32px;
   font-size: 0.92rem;
+  text-align: center;
 }
 
 .cta-datos a {
